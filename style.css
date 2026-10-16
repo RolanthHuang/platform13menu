@@ -8,3 +8,11 @@ dialog{color:var(--ink);background:var(--white);border:1px solid var(--line);bor
 .source-badge.edited{background:#e3edef;color:#41636a}.card-save{width:44px;height:44px}.category-arrow{min-width:44px}.filter-row button,.option-pill{min-height:44px}.option-row b{font-weight:550}
 @media(max-width:700px){.hero h1{font-size:clamp(22px,6.4vw,30px);letter-spacing:.7px}.card-save{width:40px;height:40px}.card-save::after{content:"";position:absolute;inset:-2px}.category-arrow{min-width:30px}.filter-row button{min-height:40px}}
 @media(prefers-reduced-motion:reduce){:root{scroll-behavior:auto}*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+
+.card-photo.is-cutout,.detail-image-wrap.is-cutout{background:#eeeade}.card-photo.is-cutout img{object-fit:contain;padding:8px}.detail-image-wrap.is-cutout>img{padding:18px}.cat-card:nth-child(3) img{object-position:50% 45%}
+
+.cat-image{height:290px;position:relative;overflow:hidden}.cat-card:nth-child(3) .cat-image img{position:absolute;max-width:none;width:200%;height:220%;left:-50%;top:-50%;object-fit:contain;object-position:50% 50%}@media(max-width:1000px){.cat-image{height:255px}}@media(max-width:700px){.cat-image{height:210px}}@media(max-width:359px){.cat-image{height:180px}}
+
+.cat-card>.cat-image{padding:0}
+
+@media(max-width:700px){.cats-intro{display:block}.cats-intro>p:last-child{margin:10px 0 16px}.cats-intro>p:last-child br{display:none}}

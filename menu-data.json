@@ -195,11 +195,11 @@
       "caption": "麵茶，虎斑店貓",
       "position": "50% 50%"
     },
-    "cat-kiki": {
-      "src": "assets/photos/cat-kiki.jpg",
+    "cat-kiki-door": {
+      "src": "assets/photos/cat-kiki-door.jpg",
       "kind": "photo",
-      "caption": "KIKI，戴綠色頸圈的黑貓",
-      "position": "50% 74%"
+      "caption": "KIKI，戴綠色頸圈、坐在門邊的黑貓",
+      "position": "50% 45%"
     },
     "banana-chocolate-waffle": {
       "src": "assets/photos/banana-chocolate-waffle.jpg",
@@ -291,11 +291,13 @@
       "caption": "抹茶與焗烤合照；飲品與餐點分別計價，焗烤口味未標明",
       "position": "50% 50%"
     },
-    "blue-citrus-drink-edit": {
-      "src": "assets/edited/blue-citrus-drink-edit.jpg",
+    "blue-citrus-solo": {
+      "src": "assets/edited/blue-citrus-solo.png",
       "kind": "edited",
-      "caption": "實拍照片經 AI 移除旁邊餐點與餐盤；飲品外觀依原照保留。",
-      "position": "12% 45%"
+      "caption": "實拍飲品經 AI 去除背景與周圍物件，置中呈現氣泡飲本身。",
+      "position": "50% 50%",
+      "fit": "contain",
+      "transparent": true
     },
     "blt": {
       "src": "assets/generated/blt.jpg",
@@ -1850,11 +1852,11 @@
           "id": "iced",
           "label": "冰",
           "price": 130,
-          "image": "blue-citrus-drink-edit"
+          "image": "blue-citrus-solo"
         }
       ],
       "images": [
-        "blue-citrus-drink-edit"
+        "blue-citrus-solo"
       ]
     },
     {
@@ -1923,7 +1925,7 @@
     {
       "name": "KIKI",
       "description": "戴綠色頸圈的黑貓。",
-      "image": "cat-kiki"
+      "image": "cat-kiki-door"
     }
   ],
   "rules": {
