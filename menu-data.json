@@ -1,0 +1,1942 @@
+{
+  "version": 1,
+  "brand": "Platform 13",
+  "currency": "TWD",
+  "sourceNote": "依提供的兩張紙本菜單整理；季節隱藏限定不列固定價格，依店內當時供應。",
+  "categories": [
+    {
+      "id": "light",
+      "name": "輕蔬食",
+      "en": "LIGHT MEAL"
+    },
+    {
+      "id": "main",
+      "name": "主食",
+      "en": "MAIN DISH"
+    },
+    {
+      "id": "tortilla",
+      "name": "脆餅",
+      "en": "TORTILLA"
+    },
+    {
+      "id": "waffle",
+      "name": "格子鬆餅",
+      "en": "WAFFLE"
+    },
+    {
+      "id": "sides",
+      "name": "點心",
+      "en": "SIDE & DESSERT"
+    },
+    {
+      "id": "coffee-cone",
+      "name": "甜筒",
+      "en": "COFFEE CONE"
+    },
+    {
+      "id": "coffee",
+      "name": "咖啡",
+      "en": "COFFEE"
+    },
+    {
+      "id": "tea",
+      "name": "茶與其他飲品",
+      "en": "TEA & OTHERS"
+    },
+    {
+      "id": "sparkling",
+      "name": "氣泡飲",
+      "en": "SPARKLING"
+    }
+  ],
+  "assets": {
+    "vegetable-wrap": {
+      "src": "assets/photos/vegetable-wrap.jpg",
+      "kind": "photo",
+      "caption": "烤時蔬捲餅；同桌橙香冰茶另計",
+      "position": "50% 70%"
+    },
+    "vegetable-wrap-egg": {
+      "src": "assets/photos/vegetable-wrap-egg.jpg",
+      "kind": "photo",
+      "caption": "烤時蔬捲餅加太陽蛋；加點另計",
+      "position": "50% 50%"
+    },
+    "vegetable-wrap-alt": {
+      "src": "assets/photos/vegetable-wrap-alt.jpg",
+      "kind": "photo",
+      "caption": "烤時蔬捲餅另一角度",
+      "position": "50% 50%"
+    },
+    "garden-salad-egg": {
+      "src": "assets/photos/garden-salad-egg.jpg",
+      "kind": "photo",
+      "caption": "田園沙拉加太陽蛋；太陽蛋另加 $40",
+      "position": "50% 50%"
+    },
+    "seasonal-waffle": {
+      "src": "assets/photos/seasonal-waffle.jpg",
+      "kind": "photo",
+      "caption": "季節水果鬆餅實拍；水果依季節變化",
+      "position": "50% 50%"
+    },
+    "milk-tea-hot": {
+      "src": "assets/photos/milk-tea-hot.jpg",
+      "kind": "photo",
+      "caption": "英式鮮奶茶（熱）；品項由照片提供者確認",
+      "position": "50% 50%"
+    },
+    "blue-citrus-waffle": {
+      "src": "assets/photos/blue-citrus-waffle.jpg",
+      "kind": "photo",
+      "caption": "藍柑橘氣泡飲與季節水果鬆餅；各品項分開計價",
+      "position": "12% 45%"
+    },
+    "soup": {
+      "src": "assets/photos/soup.jpg",
+      "kind": "photo",
+      "caption": "今日湯實拍；口味依當日供應",
+      "position": "50% 50%"
+    },
+    "potato-waffle": {
+      "src": "assets/photos/potato-waffle.jpg",
+      "kind": "photo",
+      "caption": "馬鈴薯沙拉鬆餅；同桌湯品與飲品另計",
+      "position": "50% 50%"
+    },
+    "margherita": {
+      "src": "assets/photos/margherita.jpg",
+      "kind": "photo",
+      "caption": "瑪格麗特脆餅實拍",
+      "position": "50% 50%"
+    },
+    "milk-tea-iced": {
+      "src": "assets/photos/milk-tea-iced.jpg",
+      "kind": "photo",
+      "caption": "英式鮮奶茶（冰）；品項由照片提供者確認",
+      "position": "50% 50%"
+    },
+    "fries": {
+      "src": "assets/photos/fries.jpg",
+      "kind": "photo",
+      "caption": "黃金薯條實拍",
+      "position": "50% 50%"
+    },
+    "mocha-hot": {
+      "src": "assets/photos/mocha-hot.jpg",
+      "kind": "photo",
+      "caption": "摩卡（熱）實拍",
+      "position": "50% 50%"
+    },
+    "banana-bread": {
+      "src": "assets/photos/banana-bread.jpg",
+      "kind": "photo",
+      "caption": "手工香蕉鬆糕實拍",
+      "position": "50% 50%"
+    },
+    "apple-crisp": {
+      "src": "assets/photos/apple-crisp.jpg",
+      "kind": "photo",
+      "caption": "蘋果鹹焦糖脆餅實拍",
+      "position": "50% 50%"
+    },
+    "plain-waffle": {
+      "src": "assets/photos/plain-waffle.jpg",
+      "kind": "photo",
+      "caption": "原味蜂蜜鬆餅實拍",
+      "position": "50% 50%"
+    },
+    "nuggets-chamomile": {
+      "src": "assets/photos/nuggets-chamomile.jpg",
+      "kind": "photo",
+      "caption": "蔬食雞塊與一壺西洋甘菊花茶；各品項分開計價",
+      "position": "50% 50%"
+    },
+    "cranberry-tea": {
+      "src": "assets/photos/cranberry-tea.jpg",
+      "kind": "photo",
+      "caption": "蔓越莓冰茶實拍",
+      "position": "50% 50%"
+    },
+    "banana-toast": {
+      "src": "assets/photos/banana-toast.jpg",
+      "kind": "photo",
+      "caption": "煎香蕉煙燻植物培根與麵包實拍",
+      "position": "50% 50%"
+    },
+    "orange-tea": {
+      "src": "assets/photos/orange-tea.jpg",
+      "kind": "photo",
+      "caption": "橙香冰茶實拍",
+      "position": "50% 50%"
+    },
+    "apple-crisp-alt": {
+      "src": "assets/photos/apple-crisp-alt.jpg",
+      "kind": "photo",
+      "caption": "蘋果鹹焦糖脆餅另一角度",
+      "position": "50% 50%"
+    },
+    "strawberry-waffle": {
+      "src": "assets/photos/strawberry-waffle.jpg",
+      "kind": "photo",
+      "caption": "鮮草莓蜂蜜鬆餅｜季節隱藏限定",
+      "position": "50% 50%"
+    },
+    "chamomile-hot": {
+      "src": "assets/photos/chamomile-hot.jpg",
+      "kind": "photo",
+      "caption": "西洋甘菊花茶（熱）一壺，附茶杯",
+      "position": "50% 50%"
+    },
+    "cat-miancha": {
+      "src": "assets/photos/cat-miancha.jpg",
+      "kind": "photo",
+      "caption": "麵茶，虎斑店貓",
+      "position": "50% 50%"
+    },
+    "cat-kiki": {
+      "src": "assets/photos/cat-kiki.jpg",
+      "kind": "photo",
+      "caption": "KIKI，戴綠色頸圈的黑貓",
+      "position": "50% 74%"
+    },
+    "banana-chocolate-waffle": {
+      "src": "assets/photos/banana-chocolate-waffle.jpg",
+      "kind": "photo",
+      "caption": "香蕉巧克力鬆餅參考實拍；照片含額外冰淇淋，加購另計",
+      "position": "50% 50%"
+    },
+    "affogato-photo": {
+      "src": "assets/photos/affogato-photo.jpg",
+      "kind": "photo",
+      "caption": "阿法奇朵實拍；冰淇淋與另附的濃縮咖啡",
+      "position": "50% 50%"
+    },
+    "chai-hot": {
+      "src": "assets/photos/chai-hot.jpg",
+      "kind": "reference",
+      "caption": "印度茶拿鐵（熱）參考照片",
+      "position": "50% 50%"
+    },
+    "hotdog": {
+      "src": "assets/photos/hotdog.jpg",
+      "kind": "reference",
+      "caption": "起司熱狗堡參考照片；原圖保留 Google Maps 標示",
+      "position": "50% 50%"
+    },
+    "mushroom-crisp": {
+      "src": "assets/photos/mushroom-crisp.jpg",
+      "kind": "reference",
+      "caption": "松露野菇脆餅參考照片",
+      "position": "50% 50%"
+    },
+    "mushroom-crisp-alt": {
+      "src": "assets/photos/mushroom-crisp-alt.jpg",
+      "kind": "reference",
+      "caption": "松露野菇脆餅完整參考照片；保留原圖品牌字樣",
+      "position": "50% 50%"
+    },
+    "vegetable-focaccia": {
+      "src": "assets/photos/vegetable-focaccia.jpg",
+      "kind": "reference",
+      "caption": "烤時蔬佛卡夏參考照片；依提供者標示，保留原圖品牌字樣",
+      "position": "50% 50%"
+    },
+    "ginger-milk-tea": {
+      "src": "assets/photos/ginger-milk-tea.jpg",
+      "kind": "reference",
+      "caption": "黑糖薑鮮奶茶｜冬季隱藏限定",
+      "position": "50% 50%"
+    },
+    "vegetable-lasagna-reference": {
+      "src": "assets/photos/vegetable-lasagna-reference.jpg",
+      "kind": "reference",
+      "caption": "蕃茄時蔬千層麵參考照片；保留原圖來源標示",
+      "position": "50% 50%"
+    },
+    "coffee-cone-reference": {
+      "src": "assets/photos/coffee-cone-reference.jpg",
+      "kind": "reference",
+      "caption": "甜筒咖啡參考照片；保留原圖來源標示",
+      "position": "50% 50%"
+    },
+    "creme-brulee-reference": {
+      "src": "assets/photos/creme-brulee-reference.jpg",
+      "kind": "reference",
+      "caption": "法式香烤布蕾參考照片；保留原圖來源標示",
+      "position": "50% 50%"
+    },
+    "water": {
+      "src": "assets/photos/water.jpg",
+      "kind": "reference",
+      "caption": "店內不倒翁水杯；飲用水免費，杯具為店內使用",
+      "position": "50% 50%"
+    },
+    "storefront": {
+      "src": "assets/photos/storefront.jpg",
+      "kind": "reference",
+      "caption": "十三號月台店外參考照片；保留原圖來源標示",
+      "position": "50% 50%"
+    },
+    "banana-toast-reference": {
+      "src": "assets/photos/banana-toast-reference.jpg",
+      "kind": "reference",
+      "caption": "煎香蕉煙燻培根與麵包參考照片",
+      "position": "50% 50%"
+    },
+    "matcha-baked": {
+      "src": "assets/photos/matcha-baked.jpg",
+      "kind": "reference",
+      "caption": "抹茶與焗烤合照；飲品與餐點分別計價，焗烤口味未標明",
+      "position": "50% 50%"
+    },
+    "blt": {
+      "src": "assets/generated/blt.jpg",
+      "kind": "generated",
+      "caption": "AI 生成示意，餐點外觀與擺盤以店內實際供應為準",
+      "position": "50% 50%"
+    },
+    "mushroom-focaccia": {
+      "src": "assets/generated/mushroom-focaccia.jpg",
+      "kind": "generated",
+      "caption": "AI 生成示意，餐點外觀與擺盤以店內實際供應為準",
+      "position": "50% 50%"
+    },
+    "mushroom-roll": {
+      "src": "assets/generated/mushroom-roll.jpg",
+      "kind": "generated",
+      "caption": "AI 生成示意，餐點外觀與擺盤以店內實際供應為準",
+      "position": "50% 50%"
+    },
+    "caesar-salad": {
+      "src": "assets/generated/caesar-salad.jpg",
+      "kind": "generated",
+      "caption": "AI 生成示意，餐點外觀與擺盤以店內實際供應為準",
+      "position": "50% 50%"
+    },
+    "veggie-caesar": {
+      "src": "assets/generated/veggie-caesar.jpg",
+      "kind": "generated",
+      "caption": "AI 生成示意，餐點外觀與擺盤以店內實際供應為準",
+      "position": "50% 50%"
+    },
+    "veggie-burger": {
+      "src": "assets/generated/veggie-burger.jpg",
+      "kind": "generated",
+      "caption": "AI 生成示意，餐點外觀與擺盤以店內實際供應為準",
+      "position": "50% 50%"
+    },
+    "mushroom-lasagna": {
+      "src": "assets/generated/mushroom-lasagna.jpg",
+      "kind": "generated",
+      "caption": "AI 生成示意，餐點外觀與擺盤以店內實際供應為準",
+      "position": "50% 50%"
+    },
+    "croissant": {
+      "src": "assets/generated/croissant.jpg",
+      "kind": "generated",
+      "caption": "AI 生成示意，餐點外觀與擺盤以店內實際供應為準",
+      "position": "50% 50%"
+    },
+    "fruit-croissant": {
+      "src": "assets/generated/fruit-croissant.jpg",
+      "kind": "generated",
+      "caption": "AI 生成示意，餐點外觀與擺盤以店內實際供應為準",
+      "position": "50% 50%"
+    },
+    "tomato-croissant": {
+      "src": "assets/generated/tomato-croissant.jpg",
+      "kind": "generated",
+      "caption": "AI 生成示意，餐點外觀與擺盤以店內實際供應為準",
+      "position": "50% 50%"
+    },
+    "scone": {
+      "src": "assets/generated/scone.jpg",
+      "kind": "generated",
+      "caption": "AI 生成示意，餐點外觀與擺盤以店內實際供應為準",
+      "position": "50% 50%"
+    },
+    "baileys-cone": {
+      "src": "assets/generated/baileys-cone.jpg",
+      "kind": "generated",
+      "caption": "AI 生成示意，餐點外觀與擺盤以店內實際供應為準",
+      "position": "50% 50%"
+    },
+    "espresso": {
+      "src": "assets/generated/espresso.jpg",
+      "kind": "generated",
+      "caption": "AI 生成示意，餐點外觀與擺盤以店內實際供應為準",
+      "position": "50% 50%"
+    },
+    "long-black": {
+      "src": "assets/generated/long-black.jpg",
+      "kind": "generated",
+      "caption": "AI 冷熱形式合併示意；標示價格為一份，實際外觀以店內為準",
+      "position": "50% 50%"
+    },
+    "latte": {
+      "src": "assets/generated/latte.jpg",
+      "kind": "generated",
+      "caption": "AI 冷熱形式合併示意；標示價格為一份，實際外觀以店內為準",
+      "position": "50% 50%"
+    },
+    "cappuccino": {
+      "src": "assets/generated/cappuccino.jpg",
+      "kind": "generated",
+      "caption": "AI 生成示意，餐點外觀與擺盤以店內實際供應為準",
+      "position": "50% 50%"
+    },
+    "flat-white": {
+      "src": "assets/generated/flat-white.jpg",
+      "kind": "generated",
+      "caption": "AI 生成示意，餐點外觀與擺盤以店內實際供應為準",
+      "position": "50% 50%"
+    },
+    "mocha-iced": {
+      "src": "assets/generated/mocha-iced.jpg",
+      "kind": "generated",
+      "caption": "AI 生成示意，餐點外觀與擺盤以店內實際供應為準",
+      "position": "50% 50%"
+    },
+    "cranberry-coffee": {
+      "src": "assets/generated/cranberry-coffee.jpg",
+      "kind": "generated",
+      "caption": "AI 生成示意，餐點外觀與擺盤以店內實際供應為準",
+      "position": "50% 50%"
+    },
+    "orange-coffee": {
+      "src": "assets/generated/orange-coffee.jpg",
+      "kind": "generated",
+      "caption": "AI 生成示意，餐點外觀與擺盤以店內實際供應為準",
+      "position": "50% 50%"
+    },
+    "chai-iced": {
+      "src": "assets/generated/chai-iced.jpg",
+      "kind": "generated",
+      "caption": "AI 生成示意，餐點外觀與擺盤以店內實際供應為準",
+      "position": "50% 50%"
+    },
+    "matcha": {
+      "src": "assets/generated/matcha.jpg",
+      "kind": "generated",
+      "caption": "AI 冷熱形式合併示意；標示價格為一份，實際外觀以店內為準",
+      "position": "50% 50%"
+    },
+    "chocolate-latte": {
+      "src": "assets/generated/chocolate-latte.jpg",
+      "kind": "generated",
+      "caption": "AI 冷熱形式合併示意；標示價格為一份，實際外觀以店內為準",
+      "position": "50% 50%"
+    },
+    "brown-sugar-milk": {
+      "src": "assets/generated/brown-sugar-milk.jpg",
+      "kind": "generated",
+      "caption": "AI 冷熱形式合併示意；標示價格為一份，實際外觀以店內為準",
+      "position": "50% 50%"
+    },
+    "breakfast-tea": {
+      "src": "assets/generated/breakfast-tea.jpg",
+      "kind": "generated",
+      "caption": "AI 冷熱形式合併示意；標示價格為一份，實際外觀以店內為準",
+      "position": "50% 50%"
+    },
+    "earl-grey": {
+      "src": "assets/generated/earl-grey.jpg",
+      "kind": "generated",
+      "caption": "AI 冷熱形式合併示意；標示價格為一份，實際外觀以店內為準",
+      "position": "50% 50%"
+    },
+    "chamomile-iced": {
+      "src": "assets/generated/chamomile-iced.jpg",
+      "kind": "generated",
+      "caption": "AI 生成示意，餐點外觀與擺盤以店內實際供應為準",
+      "position": "50% 50%"
+    },
+    "peppermint": {
+      "src": "assets/generated/peppermint.jpg",
+      "kind": "generated",
+      "caption": "AI 冷熱形式合併示意；標示價格為一份，實際外觀以店內為準",
+      "position": "50% 50%"
+    },
+    "lemon-lime-sparkling": {
+      "src": "assets/generated/lemon-lime-sparkling.jpg",
+      "kind": "generated",
+      "caption": "AI 生成示意，餐點外觀與擺盤以店內實際供應為準",
+      "position": "50% 50%"
+    },
+    "raspberry-sparkling": {
+      "src": "assets/generated/raspberry-sparkling.jpg",
+      "kind": "generated",
+      "caption": "AI 生成示意，餐點外觀與擺盤以店內實際供應為準",
+      "position": "50% 50%"
+    },
+    "peach-sparkling": {
+      "src": "assets/generated/peach-sparkling.jpg",
+      "kind": "generated",
+      "caption": "AI 生成示意，餐點外觀與擺盤以店內實際供應為準",
+      "position": "50% 50%"
+    },
+    "plain-chocolate-waffle": {
+      "src": "assets/generated/plain-chocolate-waffle.jpg",
+      "kind": "generated",
+      "caption": "AI 生成示意，餐點外觀與擺盤以店內實際供應為準",
+      "position": "50% 50%"
+    }
+  },
+  "items": [
+    {
+      "id": "banana-toast",
+      "name": "煎香蕉煙燻培根與麵包",
+      "en": "Veggie Smoked Bacon & Pan-fried Banana on Toast",
+      "category": "light",
+      "description": "煎香蕉、煙燻植物培根與麵包的鹹甜組合。",
+      "aliases": [
+        "香蕉培根麵包"
+      ],
+      "tags": [],
+      "variants": [
+        {
+          "id": "regular",
+          "label": "單份",
+          "price": 200,
+          "image": "banana-toast"
+        }
+      ],
+      "images": [
+        "banana-toast",
+        "banana-toast-reference"
+      ],
+      "addons": "light"
+    },
+    {
+      "id": "blt",
+      "name": "BLT 早安三明治",
+      "en": "Veggie BLT Sandwich",
+      "category": "light",
+      "description": "煙燻植物培根、生菜與番茄三明治。",
+      "aliases": [
+        "BLT三明治",
+        "早安三明治"
+      ],
+      "tags": [],
+      "variants": [
+        {
+          "id": "regular",
+          "label": "單份",
+          "price": 180,
+          "image": "blt"
+        }
+      ],
+      "images": [
+        "blt"
+      ],
+      "addons": "blt"
+    },
+    {
+      "id": "mushroom-focaccia",
+      "name": "野菇佛卡夏",
+      "en": "Stir-fried Mushroom Focaccia",
+      "category": "light",
+      "description": "野菇搭配佛卡夏麵包。",
+      "aliases": [],
+      "tags": [],
+      "variants": [
+        {
+          "id": "regular",
+          "label": "單份",
+          "price": 220,
+          "image": "mushroom-focaccia"
+        }
+      ],
+      "images": [
+        "mushroom-focaccia"
+      ],
+      "addons": "light"
+    },
+    {
+      "id": "vegetable-focaccia",
+      "name": "烤時蔬佛卡夏",
+      "en": "Grilled Vegetable Focaccia",
+      "category": "light",
+      "description": "烤時蔬搭配佛卡夏麵包。",
+      "aliases": [
+        "時蔬佛卡夏",
+        "烤蔬菜佛卡夏"
+      ],
+      "tags": [],
+      "variants": [
+        {
+          "id": "regular",
+          "label": "單份",
+          "price": 220,
+          "image": "vegetable-focaccia"
+        }
+      ],
+      "images": [
+        "vegetable-focaccia"
+      ],
+      "addons": "light"
+    },
+    {
+      "id": "mushroom-roll",
+      "name": "野菇捲餅",
+      "en": "Stir-fried Mushroom Roll",
+      "category": "light",
+      "description": "野菇捲餅，香氣濃郁的輕食選擇。",
+      "aliases": [],
+      "tags": [],
+      "variants": [
+        {
+          "id": "regular",
+          "label": "單份",
+          "price": 220,
+          "image": "mushroom-roll"
+        }
+      ],
+      "images": [
+        "mushroom-roll"
+      ],
+      "addons": "light"
+    },
+    {
+      "id": "vegetable-wrap",
+      "name": "烤時蔬捲餅",
+      "en": "Grilled Vegetable Roll",
+      "category": "light",
+      "description": "烤時蔬捲餅，可另外加點太陽蛋或炒蛋。",
+      "aliases": [
+        "時蔬捲餅",
+        "蔬菜捲餅",
+        "烤時蔬捲餅太陽蛋"
+      ],
+      "tags": [],
+      "variants": [
+        {
+          "id": "regular",
+          "label": "單份",
+          "price": 220,
+          "image": "vegetable-wrap"
+        }
+      ],
+      "images": [
+        "vegetable-wrap",
+        "vegetable-wrap-alt",
+        "vegetable-wrap-egg"
+      ],
+      "addons": "light"
+    },
+    {
+      "id": "garden-salad",
+      "name": "田園沙拉",
+      "en": "Seasonal Salad",
+      "category": "light",
+      "description": "清爽的田園時蔬沙拉。照片含另外加點的太陽蛋。",
+      "aliases": [
+        "季節沙拉",
+        "田園沙拉太陽蛋"
+      ],
+      "tags": [],
+      "variants": [
+        {
+          "id": "regular",
+          "label": "單份",
+          "price": 180,
+          "image": "garden-salad-egg"
+        }
+      ],
+      "images": [
+        "garden-salad-egg"
+      ],
+      "addons": "light"
+    },
+    {
+      "id": "caesar-salad",
+      "name": "凱撒沙拉",
+      "en": "Caesar Salad",
+      "category": "light",
+      "description": "經典凱撒風味沙拉。",
+      "aliases": [],
+      "tags": [],
+      "variants": [
+        {
+          "id": "regular",
+          "label": "單份",
+          "price": 180,
+          "image": "caesar-salad"
+        }
+      ],
+      "images": [
+        "caesar-salad"
+      ],
+      "addons": "light"
+    },
+    {
+      "id": "veggie-caesar",
+      "name": "嫩排凱撒沙拉",
+      "en": "Caesar Salad with Fried Veggie Patty",
+      "category": "light",
+      "description": "凱撒沙拉搭配香酥蔬食嫩排。",
+      "aliases": [],
+      "tags": [],
+      "variants": [
+        {
+          "id": "regular",
+          "label": "單份",
+          "price": 250,
+          "image": "veggie-caesar"
+        }
+      ],
+      "images": [
+        "veggie-caesar"
+      ],
+      "addons": "light"
+    },
+    {
+      "id": "hotdog",
+      "name": "起司熱狗堡",
+      "en": "Veggie Hot Dog with Cheese",
+      "category": "main",
+      "description": "植物性熱狗與起司的主食組合。",
+      "aliases": [
+        "熱狗堡"
+      ],
+      "tags": [],
+      "variants": [
+        {
+          "id": "regular",
+          "label": "單份",
+          "price": 200,
+          "image": "hotdog"
+        }
+      ],
+      "images": [
+        "hotdog"
+      ],
+      "addons": "meal"
+    },
+    {
+      "id": "veggie-burger",
+      "name": "香酥嫩排堡",
+      "en": "Fried Veggie Patty Burger",
+      "category": "main",
+      "description": "香酥蔬食嫩排搭配漢堡麵包。",
+      "aliases": [
+        "嫩排漢堡",
+        "漢堡"
+      ],
+      "tags": [],
+      "variants": [
+        {
+          "id": "regular",
+          "label": "單份",
+          "price": 220,
+          "image": "veggie-burger"
+        }
+      ],
+      "images": [
+        "veggie-burger"
+      ],
+      "addons": "meal"
+    },
+    {
+      "id": "vegetable-lasagna",
+      "name": "蕃茄時蔬千層麵",
+      "en": "Lasagne with Seasonal Vegetables",
+      "category": "main",
+      "description": "蕃茄與時蔬的焗烤千層麵。",
+      "aliases": [
+        "番茄時蔬千層麵"
+      ],
+      "tags": [],
+      "variants": [
+        {
+          "id": "regular",
+          "label": "單份",
+          "price": 250,
+          "image": "vegetable-lasagna-reference"
+        }
+      ],
+      "images": [
+        "vegetable-lasagna-reference"
+      ],
+      "addons": "meal"
+    },
+    {
+      "id": "mushroom-lasagna",
+      "name": "蘑菇千層麵",
+      "en": "Lasagne with Mushrooms",
+      "category": "main",
+      "description": "蘑菇風味的焗烤千層麵。",
+      "aliases": [],
+      "tags": [],
+      "variants": [
+        {
+          "id": "regular",
+          "label": "單份",
+          "price": 250,
+          "image": "mushroom-lasagna"
+        }
+      ],
+      "images": [
+        "mushroom-lasagna"
+      ],
+      "addons": "meal"
+    },
+    {
+      "id": "margherita",
+      "name": "瑪格麗特脆餅",
+      "en": "Margherita",
+      "category": "tortilla",
+      "description": "薄脆餅皮搭配番茄與起司。",
+      "aliases": [
+        "瑪格麗特",
+        "瑪格莉特"
+      ],
+      "tags": [],
+      "variants": [
+        {
+          "id": "regular",
+          "label": "單份",
+          "price": 199,
+          "image": "margherita"
+        }
+      ],
+      "images": [
+        "margherita"
+      ]
+    },
+    {
+      "id": "mushroom-crisp",
+      "name": "松露野菇脆餅",
+      "en": "Fungi with White Truffle Oil",
+      "category": "tortilla",
+      "description": "野菇與白松露油風味脆餅。",
+      "aliases": [
+        "松露脆餅",
+        "野菇脆餅"
+      ],
+      "tags": [],
+      "variants": [
+        {
+          "id": "regular",
+          "label": "單份",
+          "price": 199,
+          "image": "mushroom-crisp-alt"
+        }
+      ],
+      "images": [
+        "mushroom-crisp-alt",
+        "mushroom-crisp"
+      ]
+    },
+    {
+      "id": "apple-crisp",
+      "name": "蘋果鹹焦糖脆餅",
+      "en": "Salted Caramel Apple Cinnamon",
+      "category": "tortilla",
+      "description": "蘋果、鹹焦糖與肉桂的甜脆餅。",
+      "aliases": [
+        "蘋果鹹焦糖",
+        "蘋果脆餅"
+      ],
+      "tags": [],
+      "variants": [
+        {
+          "id": "regular",
+          "label": "單份",
+          "price": 199,
+          "image": "apple-crisp"
+        }
+      ],
+      "images": [
+        "apple-crisp",
+        "apple-crisp-alt"
+      ]
+    },
+    {
+      "id": "plain-waffle",
+      "name": "原味鬆餅",
+      "en": "Waffle with Honey or Chocolate Sauce",
+      "category": "waffle",
+      "description": "原味格子鬆餅，可選蜂蜜或巧克力醬。",
+      "aliases": [
+        "原味蜂蜜鬆餅",
+        "蜂蜜鬆餅",
+        "原味巧克力鬆餅"
+      ],
+      "tags": [],
+      "variants": [
+        {
+          "id": "honey",
+          "label": "蜂蜜",
+          "price": 130,
+          "image": "plain-waffle"
+        },
+        {
+          "id": "chocolate",
+          "label": "巧克力",
+          "price": 130,
+          "image": "plain-chocolate-waffle"
+        }
+      ],
+      "images": [
+        "plain-waffle",
+        "plain-chocolate-waffle"
+      ],
+      "addons": "waffle"
+    },
+    {
+      "id": "banana-waffle",
+      "name": "香蕉巧克力鬆餅",
+      "en": "Waffle with Banana & Chocolate Sauce",
+      "category": "waffle",
+      "description": "香蕉與巧克力醬格子鬆餅。照片中的冰淇淋為額外加購。",
+      "aliases": [
+        "香蕉鬆餅"
+      ],
+      "tags": [],
+      "variants": [
+        {
+          "id": "regular",
+          "label": "單份",
+          "price": 155,
+          "image": "banana-chocolate-waffle"
+        }
+      ],
+      "images": [
+        "banana-chocolate-waffle"
+      ],
+      "addons": "waffle"
+    },
+    {
+      "id": "seasonal-waffle",
+      "name": "季節水果鬆餅",
+      "en": "Waffle with Seasonal Fruits",
+      "category": "waffle",
+      "description": "季節水果、蜂蜜與巧克力醬搭配格子鬆餅。",
+      "aliases": [
+        "水果鬆餅"
+      ],
+      "tags": [],
+      "variants": [
+        {
+          "id": "regular",
+          "label": "單份",
+          "price": 185,
+          "image": "seasonal-waffle"
+        }
+      ],
+      "images": [
+        "seasonal-waffle",
+        "blue-citrus-waffle"
+      ],
+      "addons": "waffle"
+    },
+    {
+      "id": "potato-waffle",
+      "name": "馬鈴薯沙拉鬆餅",
+      "en": "Waffle with Potato Salad & Lettuce",
+      "category": "waffle",
+      "description": "馬鈴薯沙拉與生菜的鹹口味格子鬆餅。",
+      "aliases": [
+        "鹹鬆餅"
+      ],
+      "tags": [],
+      "variants": [
+        {
+          "id": "regular",
+          "label": "單份",
+          "price": 215,
+          "image": "potato-waffle"
+        }
+      ],
+      "images": [
+        "potato-waffle"
+      ],
+      "addons": "waffle"
+    },
+    {
+      "id": "strawberry-waffle",
+      "name": "鮮草莓蜂蜜鬆餅",
+      "en": "Fresh Strawberry & Honey Waffle",
+      "category": "waffle",
+      "description": "季節隱藏限定，依季節與店內當時供應。",
+      "aliases": [
+        "草莓鬆餅",
+        "季節隱藏限定"
+      ],
+      "tags": [
+        "seasonal"
+      ],
+      "variants": [
+        {
+          "id": "regular",
+          "label": "單份",
+          "price": null,
+          "image": "strawberry-waffle"
+        }
+      ],
+      "images": [
+        "strawberry-waffle"
+      ],
+      "hiddenPrice": true
+    },
+    {
+      "id": "croissant",
+      "name": "香烤可頌",
+      "en": "Croissant",
+      "category": "sides",
+      "description": "香烤可頌。",
+      "aliases": [],
+      "tags": [],
+      "variants": [
+        {
+          "id": "regular",
+          "label": "單份",
+          "price": 69,
+          "image": "croissant"
+        }
+      ],
+      "images": [
+        "croissant"
+      ]
+    },
+    {
+      "id": "fruit-croissant",
+      "name": "鮮奶油水果可頌",
+      "en": "Croissant with Seasonal Fruits",
+      "category": "sides",
+      "description": "鮮奶油與季節水果可頌。",
+      "aliases": [],
+      "tags": [],
+      "variants": [
+        {
+          "id": "regular",
+          "label": "單份",
+          "price": 99,
+          "image": "fruit-croissant"
+        }
+      ],
+      "images": [
+        "fruit-croissant"
+      ]
+    },
+    {
+      "id": "tomato-croissant",
+      "name": "蕃茄起司可頌",
+      "en": "Croissant with Tomato & Cheese",
+      "category": "sides",
+      "description": "蕃茄與起司可頌。",
+      "aliases": [
+        "番茄起司可頌"
+      ],
+      "tags": [],
+      "variants": [
+        {
+          "id": "regular",
+          "label": "單份",
+          "price": 99,
+          "image": "tomato-croissant"
+        }
+      ],
+      "images": [
+        "tomato-croissant"
+      ]
+    },
+    {
+      "id": "soup",
+      "name": "今日湯",
+      "en": "Soup of the Day",
+      "category": "sides",
+      "description": "每日湯品依店內當日供應。",
+      "aliases": [
+        "今日濃湯",
+        "濃湯"
+      ],
+      "tags": [],
+      "variants": [
+        {
+          "id": "regular",
+          "label": "單份",
+          "price": 80,
+          "image": "soup"
+        }
+      ],
+      "images": [
+        "soup"
+      ]
+    },
+    {
+      "id": "fries",
+      "name": "黃金薯條",
+      "en": "Chips",
+      "category": "sides",
+      "description": "金黃薯條。",
+      "aliases": [
+        "薯條"
+      ],
+      "tags": [],
+      "variants": [
+        {
+          "id": "regular",
+          "label": "單份",
+          "price": 100,
+          "image": "fries"
+        }
+      ],
+      "images": [
+        "fries"
+      ]
+    },
+    {
+      "id": "nuggets",
+      "name": "雞塊",
+      "en": "Veggie Nuggets",
+      "category": "sides",
+      "description": "蔬食雞塊。照片中的西洋甘菊花茶另計。",
+      "aliases": [
+        "素雞塊",
+        "蔬食雞塊"
+      ],
+      "tags": [],
+      "variants": [
+        {
+          "id": "regular",
+          "label": "單份",
+          "price": 100,
+          "image": "nuggets-chamomile"
+        }
+      ],
+      "images": [
+        "nuggets-chamomile"
+      ]
+    },
+    {
+      "id": "creme-brulee",
+      "name": "法式香烤布蕾",
+      "en": "Crème Brûlée",
+      "category": "sides",
+      "description": "法式香烤布蕾。",
+      "aliases": [
+        "烤布蕾",
+        "布蕾"
+      ],
+      "tags": [],
+      "variants": [
+        {
+          "id": "regular",
+          "label": "單份",
+          "price": 60,
+          "image": "creme-brulee-reference"
+        }
+      ],
+      "images": [
+        "creme-brulee-reference"
+      ]
+    },
+    {
+      "id": "scone",
+      "name": "手工司康",
+      "en": "Scone",
+      "category": "sides",
+      "description": "手工司康。",
+      "aliases": [
+        "司康"
+      ],
+      "tags": [],
+      "variants": [
+        {
+          "id": "regular",
+          "label": "單份",
+          "price": 50,
+          "image": "scone"
+        }
+      ],
+      "images": [
+        "scone"
+      ]
+    },
+    {
+      "id": "banana-bread",
+      "name": "手工香蕉鬆糕",
+      "en": "Banana Bread",
+      "category": "sides",
+      "description": "手工香蕉鬆糕。",
+      "aliases": [
+        "香蕉鬆糕",
+        "香蕉蛋糕"
+      ],
+      "tags": [],
+      "variants": [
+        {
+          "id": "regular",
+          "label": "單份",
+          "price": 50,
+          "image": "banana-bread"
+        }
+      ],
+      "images": [
+        "banana-bread"
+      ]
+    },
+    {
+      "id": "coffee-cone",
+      "name": "招牌甜筒咖啡",
+      "en": "Signature Coffee Cone",
+      "category": "coffee-cone",
+      "description": "甜筒形式的招牌咖啡。",
+      "aliases": [],
+      "tags": [],
+      "variants": [
+        {
+          "id": "regular",
+          "label": "單份",
+          "price": 150,
+          "image": "coffee-cone-reference"
+        }
+      ],
+      "images": [
+        "coffee-cone-reference"
+      ]
+    },
+    {
+      "id": "baileys-cone",
+      "name": "貝禮詩甜筒可可",
+      "en": "Baileys Chocolate Cone",
+      "category": "coffee-cone",
+      "description": "貝禮詩風味甜筒可可。",
+      "aliases": [],
+      "tags": [
+        "baileys"
+      ],
+      "variants": [
+        {
+          "id": "regular",
+          "label": "單份",
+          "price": 150,
+          "image": "baileys-cone"
+        }
+      ],
+      "images": [
+        "baileys-cone"
+      ]
+    },
+    {
+      "id": "espresso",
+      "name": "濃縮咖啡",
+      "en": "Espresso",
+      "category": "coffee",
+      "description": "濃縮咖啡。",
+      "aliases": [
+        "espresso"
+      ],
+      "tags": [],
+      "variants": [
+        {
+          "id": "hot",
+          "label": "熱",
+          "price": 90,
+          "image": "espresso"
+        }
+      ],
+      "images": [
+        "espresso"
+      ]
+    },
+    {
+      "id": "long-black",
+      "name": "美式咖啡",
+      "en": "Long Black",
+      "category": "coffee",
+      "description": "美式黑咖啡，提供冷熱選擇。",
+      "aliases": [
+        "美式",
+        "黑咖啡"
+      ],
+      "tags": [],
+      "variants": [
+        {
+          "id": "hot",
+          "label": "熱",
+          "price": 100,
+          "image": "long-black"
+        },
+        {
+          "id": "iced",
+          "label": "冰",
+          "price": 110,
+          "image": "long-black"
+        }
+      ],
+      "images": [
+        "long-black"
+      ],
+      "addons": "coffee-flavor"
+    },
+    {
+      "id": "latte",
+      "name": "拿鐵",
+      "en": "Latte",
+      "category": "coffee",
+      "description": "咖啡與鮮奶的經典搭配。",
+      "aliases": [
+        "咖啡拿鐵"
+      ],
+      "tags": [],
+      "variants": [
+        {
+          "id": "hot",
+          "label": "熱",
+          "price": 130,
+          "image": "latte"
+        },
+        {
+          "id": "iced",
+          "label": "冰",
+          "price": 140,
+          "image": "latte"
+        }
+      ],
+      "images": [
+        "latte"
+      ],
+      "addons": "coffee-flavor"
+    },
+    {
+      "id": "cappuccino",
+      "name": "卡布奇諾",
+      "en": "Cappuccino",
+      "category": "coffee",
+      "description": "熱卡布奇諾。",
+      "aliases": [],
+      "tags": [],
+      "variants": [
+        {
+          "id": "hot",
+          "label": "熱",
+          "price": 130,
+          "image": "cappuccino"
+        }
+      ],
+      "images": [
+        "cappuccino"
+      ]
+    },
+    {
+      "id": "flat-white",
+      "name": "小白咖啡",
+      "en": "Flat White",
+      "category": "coffee",
+      "description": "熱小白咖啡。",
+      "aliases": [
+        "flat white"
+      ],
+      "tags": [],
+      "variants": [
+        {
+          "id": "hot",
+          "label": "熱",
+          "price": 130,
+          "image": "flat-white"
+        }
+      ],
+      "images": [
+        "flat-white"
+      ]
+    },
+    {
+      "id": "affogato",
+      "name": "阿法奇朵",
+      "en": "Affogato",
+      "category": "coffee",
+      "description": "濃縮咖啡與冰淇淋的組合；濃縮咖啡另附，可自行淋上。",
+      "aliases": [
+        "阿芙佳朵"
+      ],
+      "tags": [],
+      "variants": [
+        {
+          "id": "regular",
+          "label": "單份",
+          "price": 130,
+          "image": "affogato-photo"
+        }
+      ],
+      "images": [
+        "affogato-photo"
+      ]
+    },
+    {
+      "id": "mocha",
+      "name": "摩卡",
+      "en": "Mocha",
+      "category": "coffee",
+      "description": "咖啡、巧克力與鮮奶。",
+      "aliases": [],
+      "tags": [],
+      "variants": [
+        {
+          "id": "hot",
+          "label": "熱",
+          "price": 140,
+          "image": "mocha-hot"
+        },
+        {
+          "id": "iced",
+          "label": "冰",
+          "price": 160,
+          "image": "mocha-iced"
+        }
+      ],
+      "images": [
+        "mocha-hot",
+        "mocha-iced"
+      ]
+    },
+    {
+      "id": "cranberry-coffee",
+      "name": "蔓越莓微光咖啡",
+      "en": "Cranberry Long Black",
+      "category": "coffee",
+      "description": "蔓越莓風味冰黑咖啡。",
+      "aliases": [],
+      "tags": [],
+      "variants": [
+        {
+          "id": "iced",
+          "label": "冰",
+          "price": 140,
+          "image": "cranberry-coffee"
+        }
+      ],
+      "images": [
+        "cranberry-coffee"
+      ]
+    },
+    {
+      "id": "orange-coffee",
+      "name": "橙香微光咖啡",
+      "en": "Orange Long Black",
+      "category": "coffee",
+      "description": "橙香風味冰黑咖啡。",
+      "aliases": [
+        "柳橙美式"
+      ],
+      "tags": [],
+      "variants": [
+        {
+          "id": "iced",
+          "label": "冰",
+          "price": 140,
+          "image": "orange-coffee"
+        }
+      ],
+      "images": [
+        "orange-coffee"
+      ]
+    },
+    {
+      "id": "chai",
+      "name": "印度茶拿鐵",
+      "en": "Chai Latte",
+      "category": "tea",
+      "description": "印度茶風味拿鐵。",
+      "aliases": [
+        "chai"
+      ],
+      "tags": [],
+      "variants": [
+        {
+          "id": "hot",
+          "label": "熱",
+          "price": 140,
+          "image": "chai-hot"
+        },
+        {
+          "id": "iced",
+          "label": "冰",
+          "price": 150,
+          "image": "chai-iced"
+        }
+      ],
+      "images": [
+        "chai-hot",
+        "chai-iced"
+      ]
+    },
+    {
+      "id": "matcha",
+      "name": "抹茶拿鐵",
+      "en": "Matcha Latte",
+      "category": "tea",
+      "description": "抹茶與鮮奶。",
+      "aliases": [],
+      "tags": [],
+      "variants": [
+        {
+          "id": "hot",
+          "label": "熱",
+          "price": 140,
+          "image": "matcha"
+        },
+        {
+          "id": "iced",
+          "label": "冰",
+          "price": 150,
+          "image": "matcha"
+        }
+      ],
+      "images": [
+        "matcha-baked",
+        "matcha"
+      ],
+      "cardImage": "matcha-baked"
+    },
+    {
+      "id": "chocolate-latte",
+      "name": "濃醇巧克力",
+      "en": "Choco Latte",
+      "category": "tea",
+      "description": "濃醇巧克力飲品。",
+      "aliases": [
+        "巧克力牛奶",
+        "可可"
+      ],
+      "tags": [],
+      "variants": [
+        {
+          "id": "hot",
+          "label": "熱",
+          "price": 140,
+          "image": "chocolate-latte"
+        },
+        {
+          "id": "iced",
+          "label": "冰",
+          "price": 150,
+          "image": "chocolate-latte"
+        }
+      ],
+      "images": [
+        "chocolate-latte"
+      ]
+    },
+    {
+      "id": "milk-tea",
+      "name": "英式鮮奶茶",
+      "en": "Black Tea Latte",
+      "category": "tea",
+      "description": "紅茶與鮮奶，提供冷熱選擇。",
+      "aliases": [
+        "鮮奶茶",
+        "奶茶",
+        "milk tea"
+      ],
+      "tags": [],
+      "variants": [
+        {
+          "id": "hot",
+          "label": "熱",
+          "price": 130,
+          "image": "milk-tea-hot"
+        },
+        {
+          "id": "iced",
+          "label": "冰",
+          "price": 140,
+          "image": "milk-tea-iced"
+        }
+      ],
+      "images": [
+        "milk-tea-hot",
+        "milk-tea-iced"
+      ],
+      "addons": "milk-tea-flavor"
+    },
+    {
+      "id": "brown-sugar-milk",
+      "name": "黑糖牛奶",
+      "en": "Brown Sugar Latte",
+      "category": "tea",
+      "description": "黑糖與牛奶；依紙本菜單標示為無咖啡因。",
+      "aliases": [],
+      "tags": [
+        "caffeine-free"
+      ],
+      "variants": [
+        {
+          "id": "hot",
+          "label": "熱",
+          "price": 130,
+          "image": "brown-sugar-milk"
+        },
+        {
+          "id": "iced",
+          "label": "冰",
+          "price": 140,
+          "image": "brown-sugar-milk"
+        }
+      ],
+      "images": [
+        "brown-sugar-milk"
+      ]
+    },
+    {
+      "id": "breakfast-tea",
+      "name": "英式早餐紅茶",
+      "en": "English Breakfast Tea",
+      "category": "tea",
+      "description": "英式早餐紅茶，清茶形式供應。",
+      "aliases": [
+        "早餐茶",
+        "英式紅茶"
+      ],
+      "tags": [],
+      "variants": [
+        {
+          "id": "hot",
+          "label": "熱",
+          "price": 100,
+          "image": "breakfast-tea"
+        },
+        {
+          "id": "iced",
+          "label": "冰",
+          "price": 110,
+          "image": "breakfast-tea"
+        }
+      ],
+      "images": [
+        "breakfast-tea"
+      ]
+    },
+    {
+      "id": "earl-grey",
+      "name": "皇家伯爵茶",
+      "en": "Earl Grey Tea",
+      "category": "tea",
+      "description": "皇家伯爵茶。",
+      "aliases": [
+        "伯爵茶"
+      ],
+      "tags": [],
+      "variants": [
+        {
+          "id": "hot",
+          "label": "熱",
+          "price": 100,
+          "image": "earl-grey"
+        },
+        {
+          "id": "iced",
+          "label": "冰",
+          "price": 110,
+          "image": "earl-grey"
+        }
+      ],
+      "images": [
+        "earl-grey"
+      ]
+    },
+    {
+      "id": "chamomile",
+      "name": "西洋甘菊花茶",
+      "en": "Chamomile Herbal Tea",
+      "category": "tea",
+      "description": "熱飲以一壺供應，附茶杯；冰飲為杯裝。",
+      "aliases": [
+        "甘菊",
+        "洋甘菊",
+        "西洋甘菊",
+        "洋甘菊花茶"
+      ],
+      "tags": [
+        "caffeine-free"
+      ],
+      "variants": [
+        {
+          "id": "hot",
+          "label": "熱",
+          "price": 100,
+          "image": "chamomile-hot"
+        },
+        {
+          "id": "iced",
+          "label": "冰",
+          "price": 110,
+          "image": "chamomile-iced"
+        }
+      ],
+      "images": [
+        "chamomile-hot",
+        "chamomile-iced"
+      ],
+      "serving": "熱飲為一壺，附杯"
+    },
+    {
+      "id": "peppermint",
+      "name": "薄荷花草茶",
+      "en": "Peppermint Herbal Tea",
+      "category": "tea",
+      "description": "熱飲以一壺供應，附茶杯；冰飲為杯裝。",
+      "aliases": [
+        "薄荷茶"
+      ],
+      "tags": [
+        "caffeine-free"
+      ],
+      "variants": [
+        {
+          "id": "hot",
+          "label": "熱",
+          "price": 100,
+          "image": "peppermint"
+        },
+        {
+          "id": "iced",
+          "label": "冰",
+          "price": 110,
+          "image": "peppermint"
+        }
+      ],
+      "images": [
+        "peppermint"
+      ],
+      "serving": "熱飲為一壺，附杯"
+    },
+    {
+      "id": "cranberry-tea",
+      "name": "蔓越莓冰茶",
+      "en": "Cranberry Iced Tea",
+      "category": "tea",
+      "description": "蔓越莓風味冰茶；依紙本菜單標示為無咖啡因。",
+      "aliases": [],
+      "tags": [
+        "caffeine-free"
+      ],
+      "variants": [
+        {
+          "id": "iced",
+          "label": "冰",
+          "price": 110,
+          "image": "cranberry-tea"
+        }
+      ],
+      "images": [
+        "cranberry-tea"
+      ]
+    },
+    {
+      "id": "orange-tea",
+      "name": "橙香冰茶",
+      "en": "Orange Iced Tea",
+      "category": "tea",
+      "description": "橙香風味冰茶；依紙本菜單標示為無咖啡因。",
+      "aliases": [
+        "橙香茶",
+        "柳橙冰茶"
+      ],
+      "tags": [
+        "caffeine-free"
+      ],
+      "variants": [
+        {
+          "id": "iced",
+          "label": "冰",
+          "price": 110,
+          "image": "orange-tea"
+        }
+      ],
+      "images": [
+        "orange-tea"
+      ]
+    },
+    {
+      "id": "lemon-lime-sparkling",
+      "name": "檸檬萊姆彼得斯",
+      "en": "Lemon Lime Bitters",
+      "category": "sparkling",
+      "description": "檸檬萊姆風味氣泡飲。",
+      "aliases": [
+        "檸檬氣泡飲"
+      ],
+      "tags": [
+        "caffeine-free"
+      ],
+      "variants": [
+        {
+          "id": "iced",
+          "label": "冰",
+          "price": 130,
+          "image": "lemon-lime-sparkling"
+        }
+      ],
+      "images": [
+        "lemon-lime-sparkling"
+      ]
+    },
+    {
+      "id": "raspberry-sparkling",
+      "name": "覆盆子檸檬氣泡飲",
+      "en": "Raspberry Sparkling",
+      "category": "sparkling",
+      "description": "覆盆子與檸檬風味氣泡飲。",
+      "aliases": [
+        "覆盆子氣泡飲"
+      ],
+      "tags": [
+        "caffeine-free"
+      ],
+      "variants": [
+        {
+          "id": "iced",
+          "label": "冰",
+          "price": 130,
+          "image": "raspberry-sparkling"
+        }
+      ],
+      "images": [
+        "raspberry-sparkling"
+      ]
+    },
+    {
+      "id": "peach-sparkling",
+      "name": "蜜桃檸檬氣泡飲",
+      "en": "Peach Sparkling",
+      "category": "sparkling",
+      "description": "蜜桃與檸檬風味氣泡飲。",
+      "aliases": [
+        "水蜜桃氣泡飲"
+      ],
+      "tags": [
+        "caffeine-free"
+      ],
+      "variants": [
+        {
+          "id": "iced",
+          "label": "冰",
+          "price": 130,
+          "image": "peach-sparkling"
+        }
+      ],
+      "images": [
+        "peach-sparkling"
+      ]
+    },
+    {
+      "id": "blue-citrus",
+      "name": "藍柑橘氣泡飲",
+      "en": "Blue Curaçao Sparkling",
+      "category": "sparkling",
+      "description": "藍柑橘風味氣泡飲。照片中的季節水果鬆餅另計。",
+      "aliases": [
+        "藍甘菊",
+        "藍甘菊氣泡飲",
+        "藍柑橘",
+        "blue curacao"
+      ],
+      "tags": [
+        "caffeine-free"
+      ],
+      "variants": [
+        {
+          "id": "iced",
+          "label": "冰",
+          "price": 130,
+          "image": "blue-citrus-waffle"
+        }
+      ],
+      "images": [
+        "blue-citrus-waffle"
+      ]
+    },
+    {
+      "id": "ginger-milk-tea",
+      "name": "黑糖薑鮮奶茶",
+      "en": "Brown Sugar Ginger Milk Tea",
+      "category": "tea",
+      "description": "冬季隱藏限定，依店內當時供應。",
+      "aliases": [
+        "薑奶茶",
+        "黑糖薑奶茶",
+        "冬季限定"
+      ],
+      "tags": [
+        "seasonal",
+        "winter"
+      ],
+      "variants": [
+        {
+          "id": "hot",
+          "label": "熱",
+          "price": null,
+          "image": "ginger-milk-tea"
+        }
+      ],
+      "images": [
+        "ginger-milk-tea"
+      ],
+      "hiddenPrice": true
+    },
+    {
+      "id": "water",
+      "name": "店內不倒翁水杯",
+      "en": "Complimentary Water",
+      "category": "tea",
+      "description": "店內免費飲用水，以不倒翁水杯供應。杯具僅供店內使用。",
+      "aliases": [
+        "水",
+        "飲用水",
+        "免費水",
+        "不倒翁"
+      ],
+      "tags": [
+        "caffeine-free",
+        "complimentary"
+      ],
+      "variants": [
+        {
+          "id": "regular",
+          "label": "單份",
+          "price": 0,
+          "image": "water"
+        }
+      ],
+      "images": [
+        "water"
+      ]
+    }
+  ],
+  "cats": [
+    {
+      "name": "麵茶",
+      "description": "窗邊的虎斑店貓。",
+      "image": "cat-miancha"
+    },
+    {
+      "name": "KIKI",
+      "description": "戴綠色頸圈的黑貓。",
+      "image": "cat-kiki"
+    }
+  ],
+  "rules": {
+    "vegetarian": true,
+    "foodDrinkDiscount": 0.8,
+    "foodDrinkDiscountCategories": [
+      "light",
+      "main",
+      "tortilla",
+      "waffle"
+    ],
+    "lightEgg": 40,
+    "bltEgg": 20,
+    "sideAddOn": 40,
+    "iceCream": 25,
+    "mainMealUpgrade": 140,
+    "mainMealIncludes": "薯條或生菜沙拉、甜點、紅茶或黑咖啡",
+    "mainMealDrinkDiscount": 60,
+    "flavor": 20,
+    "extraShot": 30
+  }
+}
