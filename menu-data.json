@@ -291,6 +291,12 @@
       "caption": "抹茶與焗烤合照；飲品與餐點分別計價，焗烤口味未標明",
       "position": "50% 50%"
     },
+    "blue-citrus-drink-edit": {
+      "src": "assets/edited/blue-citrus-drink-edit.jpg",
+      "kind": "edited",
+      "caption": "實拍照片經 AI 移除旁邊餐點與餐盤；飲品外觀依原照保留。",
+      "position": "12% 45%"
+    },
     "blt": {
       "src": "assets/generated/blt.jpg",
       "kind": "generated",
@@ -1829,7 +1835,7 @@
       "name": "藍柑橘氣泡飲",
       "en": "Blue Curaçao Sparkling",
       "category": "sparkling",
-      "description": "藍柑橘風味氣泡飲。照片中的季節水果鬆餅另計。",
+      "description": "藍柑橘風味氣泡飲。",
       "aliases": [
         "藍甘菊",
         "藍甘菊氣泡飲",
@@ -1844,11 +1850,11 @@
           "id": "iced",
           "label": "冰",
           "price": 130,
-          "image": "blue-citrus-waffle"
+          "image": "blue-citrus-drink-edit"
         }
       ],
       "images": [
-        "blue-citrus-waffle"
+        "blue-citrus-drink-edit"
       ]
     },
     {

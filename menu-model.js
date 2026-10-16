@@ -8,7 +8,7 @@
   const tokens=String(state.q||'').trim().split(/\s+/).filter(Boolean).map(normalize);
   const results=data.items.filter(item=>{
    if(state.category&&state.category!=='all'&&item.category!==state.category)return false;
-   if(state.filter==='photos'&&!item.images.some(k=>data.assets[k].kind==='photo'))return false;
+   if(state.filter==='photos'&&!item.images.some(k=>['photo','edited'].includes(data.assets[k].kind)))return false;
    if(state.filter==='seasonal'&&!item.tags.includes('seasonal'))return false;
    if(state.filter==='caffeine-free'&&!item.tags.includes('caffeine-free'))return false;
    if(state.filter==='favorites'&&!favorites.has(item.id))return false;
