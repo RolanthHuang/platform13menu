@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Platform 13｜菜單 Menu</title>
+<meta name="description" content="Platform 13 全蔬食咖啡店的線上菜單：輕蔬食、主食、脆餅、鬆餅、點心、咖啡、茶飲與氣泡飲，附照片與價格，還有三隻店貓。">
+<meta name="theme-color" content="#2b4a8a">
+<meta property="og:title" content="Platform 13｜菜單 Menu">
+<meta property="og:description" content="全店蔬食。喝杯咖啡，吃點東西，不要急，活著很好。">
+<meta property="og:image" content="assets/img/photos/strawberry-waffle.webp">
+<link rel="icon" href="assets/img/icon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/wenkai-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<a class="skip" href="#view">跳到菜單內容</a>
+
+<header class="topbar" id="topbar">
+  <a class="wordmark" href="#/" aria-label="回到總覽">
+    <span class="wordmark-badge" aria-hidden="true">13</span>
+    <span class="wordmark-text"><b>Platform 13</b><small>全店蔬食・菜單</small></span>
+  </a>
+  <button class="icon-btn" id="openSearch" type="button" aria-label="搜尋餐點或飲品">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>
+  </button>
+</header>
+
+<nav class="stops" id="stops" aria-label="菜單分類" hidden></nav>
+
+<main id="view" tabindex="-1"></main>
+
+<footer class="site-foot">
+  <p class="foot-quote" id="footQuote"></p>
+  <p class="foot-note">價格以現場為準。標示「插畫示意」的圖為插畫，實際餐點以現場為準；標示「照片準備中」的品項，照片會陸續補上。</p>
+</footer>
+
+<div class="sheet-wrap" id="sheetWrap" hidden>
+  <div class="sheet-backdrop" data-close></div>
+  <section class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle" tabindex="-1"></section>
+</div>
+
+<div class="search-wrap" id="searchWrap" hidden>
+  <section class="search" role="dialog" aria-modal="true" aria-label="搜尋菜單">
+    <div class="search-bar">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>
+      <input id="searchInput" type="search" placeholder="搜尋：拿鐵、鬆餅、無咖啡因…" autocomplete="off" enterkeyhint="search" aria-label="搜尋關鍵字">
+      <button class="text-btn" id="closeSearch" type="button">關閉</button>
+    </div>
+    <div class="search-hints" id="searchHints"></div>
+    <div class="search-results" id="searchResults" aria-live="polite"></div>
+  </section>
+</div>
+
+<script src="assets/js/menu-data.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
