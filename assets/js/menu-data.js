@@ -36,11 +36,12 @@ window.P13 = {
         { id: 'blt', zh: 'BLT 早安三明治', en: 'Veggie Smoked Bacon, Lettuce, Tomato Sandwich', price: 180,
           extra: '夾蛋 +20', imgs: [] },
         { id: 'focaccia', zh: '野菇佛卡夏／烤時蔬佛卡夏', en: 'Stir-fried Mushroom or Grilled Vegetables with Focaccia', price: 220,
-          imgs: [] },
+          imgs: [{ src: 'photos/focaccia', kind: 'photo', cap: '佛卡夏，附薯條與沙拉' }] },
         { id: 'wrap', zh: '野菇捲餅／烤時蔬捲餅', en: 'Stir-fried Mushroom Roll or Grilled Vegetables Roll', price: 220,
           imgs: [
             { src: 'photos/wrap-orange-tea', kind: 'photo', cap: '烤時蔬捲餅，搭配橙香冰茶' },
-            { src: 'photos/wrap-eggs', kind: 'photo', cap: '烤時蔬捲餅，加點太陽蛋' }
+            { src: 'photos/wrap-eggs', kind: 'photo', cap: '烤時蔬捲餅，加點太陽蛋' },
+            { src: 'photos/wrap-salad', kind: 'photo', cap: '烤時蔬捲餅，附薯條與沙拉' }
           ] },
         { id: 'garden-salad', zh: '田園沙拉', en: 'Seasonal Salad', price: 180,
           imgs: [{ src: 'photos/garden-salad', kind: 'photo', cap: '照片是拼盤附的田園沙拉，單點份量以現場為準' }] },
@@ -62,9 +63,11 @@ window.P13 = {
       id: 'main', zh: '主食', en: 'Main Dish',
       note: '搭配單點飲品，飲品享 8 折', noteEn: '20% off drinks ordered with it',
       items: [
-        { id: 'hotdog', zh: '起司熱狗堡', en: 'Veggie Hot Dog with Cheese', price: 200, imgs: [] },
+        { id: 'hotdog', zh: '起司熱狗堡', en: 'Veggie Hot Dog with Cheese', price: 200,
+          imgs: [{ src: 'photos/hotdog', kind: 'photo', cap: '附洋芋片、馬鈴薯沙拉與水果' }] },
         { id: 'burger', zh: '香酥嫩排堡', en: 'Fried Veggie Patty Burger', price: 220, imgs: [] },
-        { id: 'lasagne-veg', zh: '蕃茄時蔬千層麵', en: 'Lasagne with Seasonal Vegetables', price: 250, imgs: [] },
+        { id: 'lasagne-veg', zh: '蕃茄時蔬千層麵', en: 'Lasagne with Seasonal Vegetables', price: 250,
+          imgs: [{ src: 'photos/lasagne-veg', kind: 'photo', cap: '搭配薯條、洋芋片與水果' }] },
         { id: 'lasagne-mush', zh: '蘑菇千層麵', en: 'Lasagne with Mushrooms', price: 250, imgs: [] }
       ],
       addons: {
@@ -82,7 +85,8 @@ window.P13 = {
       items: [
         { id: 'margherita', zh: '瑪格麗特', en: 'Margherita', price: 199,
           imgs: [{ src: 'photos/margherita', kind: 'photo' }] },
-        { id: 'truffle', zh: '松露野菇', en: 'Fungi with White Truffle Oil', price: 199, imgs: [] },
+        { id: 'truffle', zh: '松露野菇', en: 'Fungi with White Truffle Oil', price: 199,
+          imgs: [{ src: 'photos/truffle', kind: 'photo' }] },
         { id: 'apple', zh: '蘋果鹹焦糖', en: 'Salted Caramel Apple Cinnamon', price: 199,
           imgs: [{ src: 'photos/apple-tortilla', kind: 'photo' }, { src: 'photos/apple-tortilla-2', kind: 'photo' }] }
       ]
@@ -119,15 +123,19 @@ window.P13 = {
       cover: 'photos/banana-bread',
       items: [
         { id: 'croissant', zh: '香烤可頌', en: 'Croissant', price: 69, imgs: [] },
-        { id: 'croissant-fruit', zh: '鮮奶油水果可頌', en: 'Croissant with Seasonal Fruits', price: 99, imgs: [] },
-        { id: 'croissant-tomato', zh: '蕃茄起司可頌', en: 'Croissant with Tomato and Cheese', price: 99, imgs: [] },
+        { id: 'croissant-fruit', zh: '鮮奶油水果可頌', en: 'Croissant with Seasonal Fruits', price: 99,
+          imgs: [{ src: 'photos/croissant-fruit', kind: 'photo', cap: '水果依季節更換' }] },
+        { id: 'croissant-tomato', zh: '蕃茄起司可頌', en: 'Croissant with Tomato and Cheese', price: 99,
+          imgs: [{ src: 'photos/croissant-tomato', kind: 'photo' }] },
         { id: 'soup', zh: '今日湯', en: 'Soup of the Day', price: 80,
           imgs: [{ src: 'photos/soup', kind: 'photo', cap: '每日口味不同' }] },
         { id: 'chips', zh: '黃金薯條', en: 'Chips', price: 100, imgs: [{ src: 'photos/chips', kind: 'photo' }] },
         { id: 'nuggets', zh: '雞塊', en: 'Veggie Nuggets', price: 100,
-          imgs: [{ src: 'photos/nuggets-chamomile', kind: 'photo', cap: '雞塊，搭配西洋甘菊花茶' }] },
-        { id: 'brulee', zh: '法式香烤布蕾', en: 'Crème Brûlée', price: 60, imgs: [] },
-        { id: 'scone', zh: '手工司康', en: 'Scone', price: 50, imgs: [] },
+          imgs: [{ src: 'photos/nuggets', kind: 'photo' }, { src: 'photos/nuggets-chamomile', kind: 'photo', cap: '雞塊，搭配西洋甘菊花茶' }] },
+        { id: 'brulee', zh: '法式香烤布蕾', en: 'Crème Brûlée', price: 60,
+          imgs: [{ src: 'photos/brulee', kind: 'photo' }] },
+        { id: 'scone', zh: '手工司康', en: 'Scone', price: 50,
+          imgs: [{ src: 'photos/scone-orange-black', kind: 'photo', cap: '手工司康，搭配橙香微光咖啡' }] },
         { id: 'banana-bread', zh: '手工香蕉鬆糕', en: 'Banana Bread', price: 50,
           imgs: [{ src: 'photos/banana-bread', kind: 'photo' }] }
       ]
@@ -135,12 +143,12 @@ window.P13 = {
 
     {
       id: 'cone', zh: '甜筒', en: 'Coffee Cone',
-      cover: 'illust/coffee-cone',
+      cover: 'photos/baileys-cone',
       items: [
         { id: 'coffee-cone', zh: '招牌甜筒咖啡', en: 'Signature Coffee Cone', price: 150,
           imgs: [{ src: 'illust/coffee-cone', kind: 'illust' }] },
         { id: 'baileys-cone', zh: '貝禮詩甜筒可可', en: 'Baileys Chocolate Cone', price: 150,
-          imgs: [{ src: 'illust/baileys-cone', kind: 'illust' }] }
+          imgs: [{ src: 'photos/baileys-cone', kind: 'photo' }, { src: 'photos/baileys-cone-2', kind: 'photo' }] }
       ]
     },
 
@@ -158,9 +166,9 @@ window.P13 = {
         { id: 'affogato', zh: '阿法奇朵', en: 'Affogato', price: 130, imgs: [{ src: 'illust/affogato', kind: 'illust' }] },
         { id: 'mocha', zh: '摩卡', en: 'Mocha', price: { hot: 140, ice: 160 }, imgs: [{ src: 'photos/mocha', kind: 'photo' }] },
         { id: 'cranberry-black', zh: '蔓越莓微光咖啡', en: 'Cranberry Long Black', price: { ice: 140 },
-          imgs: [{ src: 'illust/cranberry-long-black', kind: 'illust' }] },
+          imgs: [{ src: 'photos/cranberry-black', kind: 'photo', cap: '蔓越莓冰茶與濃縮分開上，自己倒進去' }] },
         { id: 'orange-black', zh: '橙香微光咖啡', en: 'Orange Long Black', price: { ice: 140 },
-          imgs: [{ src: 'illust/orange-long-black', kind: 'illust' }] }
+          imgs: [{ src: 'photos/scone-orange-black', kind: 'photo', cap: '橙香微光咖啡，搭配手工司康' }] }
       ],
       addons: {
         zh: '加點', en: 'Extras',
@@ -202,7 +210,7 @@ window.P13 = {
 
     {
       id: 'sparkling', zh: '氣泡飲', en: 'Sparkling',
-      cover: 'photos/blue-sparkling',
+      cover: 'photos/blue-sparkling-2',
       items: [
         { id: 'llb', zh: '檸檬萊姆彼得斯', en: 'Lemon Lime Bitters', price: 130, tags: ['decaf'],
           imgs: [{ src: 'illust/lemon-lime-bitters', kind: 'illust' }] },
@@ -211,7 +219,7 @@ window.P13 = {
         { id: 'peach', zh: '蜜桃檸檬氣泡飲', en: 'Peach Sparkling', price: 130, tags: ['decaf'],
           imgs: [{ src: 'illust/peach-sparkling', kind: 'illust' }] },
         { id: 'blue', zh: '藍柑橘氣泡飲', en: 'Blue Curaçao Sparkling', price: 130, tags: ['decaf'],
-          imgs: [{ src: 'photos/blue-sparkling', kind: 'photo' }, { src: 'photos/blue-sparkling-waffle', kind: 'photo', cap: '搭配季節水果鬆餅' }] }
+          imgs: [{ src: 'photos/blue-sparkling-2', kind: 'photo' }, { src: 'photos/blue-sparkling-3', kind: 'photo', cap: '水果裝飾依季節更換' }, { src: 'photos/blue-sparkling', kind: 'photo' }, { src: 'photos/blue-sparkling-waffle', kind: 'photo', cap: '搭配季節水果鬆餅' }] }
       ]
     }
   ],
