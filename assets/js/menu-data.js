@@ -36,7 +36,7 @@ window.P13 = {
         { id: 'blt', zh: 'BLT 早安三明治', en: 'Veggie Smoked Bacon, Lettuce, Tomato Sandwich', price: 180,
           extra: '夾蛋 +20', imgs: [] },
         { id: 'focaccia', zh: '野菇佛卡夏／烤時蔬佛卡夏', en: 'Stir-fried Mushroom or Grilled Vegetables with Focaccia', price: 220,
-          imgs: [{ src: 'photos/focaccia', kind: 'photo', cap: '佛卡夏，附薯條與沙拉' }] },
+          imgs: [{ src: 'photos/focaccia', kind: 'photo', cap: '烤時蔬佛卡夏，附薯條與沙拉' }] },
         { id: 'wrap', zh: '野菇捲餅／烤時蔬捲餅', en: 'Stir-fried Mushroom Roll or Grilled Vegetables Roll', price: 220,
           imgs: [
             { src: 'photos/wrap-orange-tea', kind: 'photo', cap: '烤時蔬捲餅，搭配橙香冰茶' },
@@ -65,10 +65,12 @@ window.P13 = {
       items: [
         { id: 'hotdog', zh: '起司熱狗堡', en: 'Veggie Hot Dog with Cheese', price: 200,
           imgs: [{ src: 'photos/hotdog', kind: 'photo', cap: '附洋芋片、馬鈴薯沙拉與水果' }] },
-        { id: 'burger', zh: '香酥嫩排堡', en: 'Fried Veggie Patty Burger', price: 220, imgs: [] },
+        { id: 'burger', zh: '香酥嫩排堡', en: 'Fried Veggie Patty Burger', price: 220,
+          imgs: [{ src: 'photos/burger', kind: 'photo', cap: '附洋芋片、馬鈴薯沙拉與水果' }] },
         { id: 'lasagne-veg', zh: '蕃茄時蔬千層麵', en: 'Lasagne with Seasonal Vegetables', price: 250,
-          imgs: [{ src: 'photos/lasagne-veg', kind: 'photo', cap: '搭配薯條、洋芋片與水果' }] },
-        { id: 'lasagne-mush', zh: '蘑菇千層麵', en: 'Lasagne with Mushrooms', price: 250, imgs: [] }
+          imgs: [{ src: 'photos/lasagne-veg', kind: 'photo', cap: '附洋芋片、馬鈴薯沙拉與水果' }] },
+        { id: 'lasagne-mush', zh: '蘑菇千層麵', en: 'Lasagne with Mushrooms', price: 250,
+          imgs: [{ src: 'photos/lasagne-mush', kind: 'photo' }] }
       ],
       addons: {
         zh: '升級套餐', en: 'Make it a meal', price: '+140',
@@ -99,7 +101,8 @@ window.P13 = {
       items: [
         { id: 'plain-waffle', zh: '原味鬆餅（蜂蜜或巧克力）', en: 'Waffle with Honey or Chocolate Sauce', price: 130,
           imgs: [{ src: 'photos/honey-waffle', kind: 'photo', cap: '蜂蜜口味' }] },
-        { id: 'banana-waffle', zh: '香蕉巧克力鬆餅', en: 'Waffle with Fresh Banana and Chocolate Sauce', price: 155, imgs: [] },
+        { id: 'banana-waffle', zh: '香蕉巧克力鬆餅', en: 'Waffle with Fresh Banana and Chocolate Sauce', price: 155,
+          imgs: [{ src: 'photos/banana-waffle', kind: 'photo' }] },
         { id: 'fruit-waffle', zh: '季節水果鬆餅', en: 'Waffle with Seasonal Fruits, Honey and Chocolate Sauce', price: 185,
           imgs: [
             { src: 'photos/fruit-waffle', kind: 'photo', cap: '水果依季節更換' },
@@ -125,8 +128,7 @@ window.P13 = {
         { id: 'croissant', zh: '香烤可頌', en: 'Croissant', price: 69, imgs: [] },
         { id: 'croissant-fruit', zh: '鮮奶油水果可頌', en: 'Croissant with Seasonal Fruits', price: 99,
           imgs: [{ src: 'photos/croissant-fruit', kind: 'photo', cap: '水果依季節更換' }] },
-        { id: 'croissant-tomato', zh: '蕃茄起司可頌', en: 'Croissant with Tomato and Cheese', price: 99,
-          imgs: [{ src: 'photos/croissant-tomato', kind: 'photo' }] },
+        { id: 'croissant-tomato', zh: '蕃茄起司可頌', en: 'Croissant with Tomato and Cheese', price: 99, imgs: [] },
         { id: 'soup', zh: '今日湯', en: 'Soup of the Day', price: 80,
           imgs: [{ src: 'photos/soup', kind: 'photo', cap: '每日口味不同' }] },
         { id: 'chips', zh: '黃金薯條', en: 'Chips', price: 100, imgs: [{ src: 'photos/chips', kind: 'photo' }] },
@@ -168,7 +170,7 @@ window.P13 = {
         { id: 'cranberry-black', zh: '蔓越莓微光咖啡', en: 'Cranberry Long Black', price: { ice: 140 },
           imgs: [{ src: 'photos/cranberry-black', kind: 'photo', cap: '蔓越莓冰茶與濃縮分開上，自己倒進去' }] },
         { id: 'orange-black', zh: '橙香微光咖啡', en: 'Orange Long Black', price: { ice: 140 },
-          imgs: [{ src: 'photos/scone-orange-black', kind: 'photo', cap: '橙香微光咖啡，搭配手工司康' }] }
+          imgs: [{ src: 'photos/orange-black', kind: 'photo' }, { src: 'photos/scone-orange-black', kind: 'photo', cap: '搭配手工司康' }] }
       ],
       addons: {
         zh: '加點', en: 'Extras',
@@ -184,7 +186,7 @@ window.P13 = {
       cover: 'photos/chamomile-set',
       items: [
         { id: 'chai', zh: '印度茶拿鐵', en: 'Chai Latte', price: { hot: 140, ice: 150 }, imgs: [{ src: 'illust/chai-latte', kind: 'illust' }] },
-        { id: 'matcha', zh: '抹茶拿鐵', en: 'Matcha Latte', price: { hot: 140, ice: 150 }, imgs: [{ src: 'illust/matcha-latte', kind: 'illust' }] },
+        { id: 'matcha', zh: '抹茶拿鐵', en: 'Matcha Latte', price: { hot: 140, ice: 150 }, imgs: [{ src: 'photos/matcha', kind: 'photo' }] },
         { id: 'choco', zh: '濃醇巧克力', en: 'Choco Latte', price: { hot: 140, ice: 150 }, imgs: [{ src: 'illust/choco-latte', kind: 'illust' }] },
         { id: 'tea-latte', zh: '英式鮮奶茶', en: 'Black Tea Latte', price: { hot: 130, ice: 140 }, flavour: true,
           imgs: [{ src: 'illust/black-tea-latte', kind: 'illust' }] },
@@ -215,7 +217,7 @@ window.P13 = {
         { id: 'llb', zh: '檸檬萊姆彼得斯', en: 'Lemon Lime Bitters', price: 130, tags: ['decaf'],
           imgs: [{ src: 'illust/lemon-lime-bitters', kind: 'illust' }] },
         { id: 'raspberry', zh: '覆盆子檸檬氣泡飲', en: 'Raspberry Sparkling', price: 130, tags: ['decaf'],
-          imgs: [{ src: 'illust/raspberry-sparkling', kind: 'illust' }] },
+          imgs: [{ src: 'photos/raspberry-sparkling', kind: 'photo' }] },
         { id: 'peach', zh: '蜜桃檸檬氣泡飲', en: 'Peach Sparkling', price: 130, tags: ['decaf'],
           imgs: [{ src: 'illust/peach-sparkling', kind: 'illust' }] },
         { id: 'blue', zh: '藍柑橘氣泡飲', en: 'Blue Curaçao Sparkling', price: 130, tags: ['decaf'],
