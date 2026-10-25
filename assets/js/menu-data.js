@@ -46,7 +46,8 @@ window.P13 = {
         { id: 'garden-salad', zh: '田園沙拉', en: 'Seasonal Salad', price: 180,
           imgs: [{ src: 'photos/garden-salad', kind: 'photo', cap: '照片是拼盤附的田園沙拉，單點份量以現場為準' }] },
         { id: 'caesar', zh: '凱撒沙拉', en: 'Caesar Salad', price: 180, imgs: [] },
-        { id: 'caesar-patty', zh: '嫩排凱撒沙拉', en: 'Caesar Salad with Fried Veggie Patty', price: 250, imgs: [] }
+        { id: 'caesar-patty', zh: '嫩排凱撒沙拉', en: 'Caesar Salad with Fried Veggie Patty', price: 250,
+          imgs: [{ src: 'photos/caesar-patty', kind: 'photo' }] }
       ],
       addons: {
         zh: '拼盤加點', en: 'Something on the side',
