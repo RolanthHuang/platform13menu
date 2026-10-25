@@ -57,10 +57,6 @@
     if (!tags || !tags.length) return '';
     return '<span class="tags">' + tags.map(function (t) { return '<span class="tag ' + t + '">' + TAG[t] + '</span>'; }).join('') + '</span>';
   }
-  function flaps(text, cls) {
-    return '<span class="flaps ' + (cls || '') + '" data-final="' + esc(text) + '">' +
-      Array.prototype.map.call(String(text), function (ch) { return '<span class="fc">' + esc(ch) + '</span>'; }).join('') + '</span>';
-  }
   var SLEEPY = '<svg class="sleepy" viewBox="0 0 120 70" aria-hidden="true"><path d="M14 58c0-20 18-34 44-34 20 0 34 8 40 20 4 8 2 14-6 14H20c-4 0-6-0-6 0z"/>' +
     '<path d="M86 30l6-14 6 12M100 30l8-12 2 15"/><path d="M90 40c3 2 6 2 9 0M102 40c3 2 6 2 9 0"/><path d="M14 58c-6-2-10-8-6-14 3-4 9-3 10 1"/><path d="M104 12h8l-8 8h8M92 2h6l-6 6h6"/></svg>';
 
@@ -74,48 +70,181 @@
     return out;
   }
 
-  // ------------------------------------------------------------------ home (departure board)
-  function clockSVG(h, m) {
-    var ticks = '', nums = { 0: 'XII', 3: 'III', 6: 'VI', 9: 'IX' };
-    for (var i = 0; i < 60; i++) {
-      var a = i * 6 * Math.PI / 180, big = i % 5 === 0, r1 = big ? 38 : 41, r2 = 44;
-      ticks += '<line x1="' + (50 + Math.sin(a) * r1).toFixed(1) + '" y1="' + (50 - Math.cos(a) * r1).toFixed(1) + '" x2="' + (50 + Math.sin(a) * r2).toFixed(1) + '" y2="' + (50 - Math.cos(a) * r2).toFixed(1) + '" stroke-width="' + (big ? 2.2 : .8) + '"/>';
-    }
-    var label = Object.keys(nums).map(function (k) {
-      var a = k * 30 * Math.PI / 180;
-      return '<text x="' + (50 + Math.sin(a) * 30).toFixed(1) + '" y="' + (50 - Math.cos(a) * 30 + 3.4).toFixed(1) + '">' + nums[k] + '</text>';
-    }).join('');
+  // ------------------------------------------------------------------ split-flap cells
+  function cellHTML(ch) {
+    return '<span class="fc" data-ch="' + esc(ch) + '"><span class="h t"><span>' + esc(ch) + '</span></span><span class="h b"><span>' + esc(ch) + '</span></span></span>';
+  }
+  function flaps(text, cls, id) {
+    return '<span class="flaps ' + (cls || '') + '"' + (id ? ' id="' + id + '"' : '') + '><span class="sr">' + esc(text) + '</span><span class="fcs" aria-hidden="true">' +
+      Array.prototype.map.call(String(text), cellHTML).join('') + '</span></span>';
+  }
+  function setCell(cell, ch) {
+    cell.setAttribute('data-ch', ch);
+    cell.querySelector('.h.t > span').textContent = ch;
+    cell.querySelector('.h.b > span').textContent = ch;
+  }
+  var FD = 72;   // ms for each half of a flip
+  function flipTo(cell, ch) {
+    var old = cell.getAttribute('data-ch');
+    if (old === ch) return;
+    if (reduce) { setCell(cell, ch); return; }
+    Array.prototype.forEach.call(cell.querySelectorAll('.ft, .fb'), function (n) { n.remove(); });
+    var top = cell.querySelector('.h.t:not(.ft) > span'), bot = cell.querySelector('.h.b:not(.fb) > span');
+    var ft = document.createElement('span'), fb = document.createElement('span');
+    ft.className = 'h t ft'; ft.innerHTML = '<span>' + esc(old) + '</span>';
+    fb.className = 'h b fb'; fb.innerHTML = '<span>' + esc(ch) + '</span>';
+    top.textContent = ch;
+    cell.appendChild(ft); cell.appendChild(fb);
+    cell.setAttribute('data-ch', ch);
+    setTimeout(function () { bot.textContent = ch; ft.remove(); fb.remove(); }, FD * 2 + 20);
+  }
+  function runFlaps() {
+    var DIG = '0123456789', CJK = '喵咪貓茶餅';
+    Array.prototype.forEach.call(document.querySelectorAll('.brow'), function (row, r) {
+      Array.prototype.forEach.call(row.querySelectorAll('.fc'), function (cell, c) {
+        var final = cell.getAttribute('data-ch'), set = /\d/.test(final) ? DIG : CJK;
+        var steps = Math.min(15, 3 + r + c * 2), seq = [];
+        for (var k = 0; k < steps; k++) seq.push(set[Math.floor(Math.random() * set.length)]);
+        setCell(cell, seq[0]);
+        seq.slice(1).concat([final]).forEach(function (ch, k) {
+          setTimeout(function () { flipTo(cell, ch); }, 300 + r * 70 + k * (FD * 2 + 34));
+        });
+      });
+    });
+  }
+
+  // ------------------------------------------------------------------ clocks
+  function pt(cx, cy, r, a) { return (cx + Math.sin(a) * r).toFixed(2) + ' ' + (cy - Math.cos(a) * r).toFixed(2); }
+  function ringPath(cx, cy, R, r) {
+    function c(rad) { return 'M' + (cx - rad) + ' ' + cy + 'a' + rad + ' ' + rad + ' 0 1 0 ' + 2 * rad + ' 0a' + rad + ' ' + rad + ' 0 1 0 ' + (-2 * rad) + ' 0Z'; }
+    return c(R) + c(r);
+  }
+  var NUM = ['XII', 'I', 'II', 'III', 'IIII', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI'];
+  var CHAPTER = (function () {
+    var s = '<circle cx="60" cy="60" r="44.6" class="cr"/><circle cx="60" cy="60" r="39.2" class="cr thin"/><path class="mt" d="', i, a;
+    for (i = 0; i < 60; i++) { if (i % 5 === 0) continue; a = i * Math.PI / 30; s += 'M' + pt(60, 60, 39.2, a) + 'L' + pt(60, 60, 44.6, a); }
+    s += '"/><path class="ht" d="';
+    for (i = 0; i < 12; i++) { a = i * Math.PI / 6; s += 'M' + pt(60, 60, 37.6, a) + 'L' + pt(60, 60, 45.6, a); }
+    s += '"/><g class="nums">';
+    NUM.forEach(function (n, k) { s += '<text x="60" y="32.6" transform="rotate(' + k * 30 + ' 60 60)">' + n + '</text>'; });
+    return s + '</g><text class="mk" x="60" y="47.6">PLATFORM 13</text>';
+  })();
+  var HOUR = '<rect x="58.8" y="42.4" width="2.4" height="23.6" rx=".6"/><path fill-rule="evenodd" d="' + ringPath(60, 38.4, 4.5, 2.6) + '"/>' +
+    '<path d="M58.3 34.6 L61.7 34.6 L60 27.8 Z"/><circle cx="60" cy="66.4" r="2.6"/>';
+  var MINUTE = '<rect x="59.15" y="29.6" width="1.7" height="38.6" rx=".5"/><path fill-rule="evenodd" d="' + ringPath(60, 26.6, 3.2, 1.85) + '"/>' +
+    '<path d="M58.75 24 L61.25 24 L60 16 Z"/><circle cx="60" cy="68.2" r="2.05"/>';
+  function clockSVG(h, m, o) {
+    o = o || {};
     var ha = ((h % 12) + m / 60) * 30, ma = m * 6;
-    return '<svg class="clock-face" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="48" class="rim"/><circle cx="50" cy="50" r="45" class="face"/>' +
-      '<g class="ticks">' + ticks + '</g><g class="nums">' + label + '</g>' +
-      '<line class="hh" x1="50" y1="50" x2="50" y2="28" transform="rotate(' + ha + ' 50 50)"/>' +
-      '<line class="mh" x1="50" y1="50" x2="50" y2="15" transform="rotate(' + ma + ' 50 50)"/><circle cx="50" cy="50" r="2.6" class="pin"/></svg>';
+    var id = function (k) { return o.id ? ' id="' + o.id + k + '"' : ''; };
+    var s = '<svg class="clk' + (o.big ? ' big' : '') + '" viewBox="0 0 120 120" aria-hidden="true">' +
+      '<circle cx="60" cy="60" r="58.4" fill="url(#brassA)"/><circle cx="60" cy="60" r="54" fill="url(#brassB)"/>' +
+      '<circle cx="60" cy="60" r="51.1" fill="#3B2A15"/><circle cx="60" cy="60" r="50.3" fill="url(#dial)"/>' +
+      '<circle cx="60" cy="60" r="49" class="age"/>' + CHAPTER +
+      '<g class="hs" transform="translate(1.3 2.2)" filter="url(#handShadow)"><g' + id('Hs') + ' transform="rotate(' + ha.toFixed(2) + ' 60 60)">' + HOUR + '</g>' +
+      '<g' + id('Ms') + ' transform="rotate(' + ma.toFixed(2) + ' 60 60)">' + MINUTE + '</g></g>' +
+      '<g class="hd"><g' + id('H') + ' transform="rotate(' + ha.toFixed(2) + ' 60 60)">' + HOUR + '</g><g' + id('M') + ' transform="rotate(' + ma.toFixed(2) + ' 60 60)">' + MINUTE + '</g></g>';
+    if (o.sec != null) {
+      s += '<g' + id('S') + ' transform="rotate(' + Math.floor(o.sec) * 6 + ' 60 60)"><g class="sec"><path d="M59.6 75 L60.4 75 L60.18 14.5 L59.82 14.5 Z"/><circle cx="60" cy="71.5" r="2.7"/><circle cx="60" cy="60" r="2"/></g></g>';
+    }
+    s += '<circle cx="60" cy="60" r="3.3" fill="url(#cap)"/><circle cx="60" cy="60" r=".95" fill="#3B2A15"/>' +
+      '<circle cx="60" cy="60" r="50.3" fill="url(#glass)"/>' +
+      '<path d="M24.5 50 A37 37 0 0 1 52 23.5" class="glint"/><path d="M86 93 A37 37 0 0 0 95.5 80" class="glint dim"/></svg>';
+    return s;
+  }
+  function towerSVG() {
+    var d = new Date();
+    return clockSVG(d.getHours(), d.getMinutes() + d.getSeconds() / 60, { id: 'tw', big: true, sec: d.getSeconds() + d.getMilliseconds() / 1000 });
+  }
+  function updateTower() {
+    var h = document.getElementById('twH');
+    if (!h) return;
+    var d = new Date(), mm = d.getMinutes() + d.getSeconds() / 60;
+    var ha = 'rotate(' + (((d.getHours() % 12) + mm / 60) * 30).toFixed(2) + ' 60 60)', ma = 'rotate(' + (mm * 6).toFixed(2) + ' 60 60)';
+    ['twH', 'twHs'].forEach(function (k) { document.getElementById(k).setAttribute('transform', ha); });
+    ['twM', 'twMs'].forEach(function (k) { document.getElementById(k).setAttribute('transform', ma); });
+    if (reduce) document.getElementById('twS').setAttribute('transform', 'rotate(' + d.getSeconds() * 6 + ' 60 60)');
   }
   function departures() {
     var d = new Date(), base = Math.ceil((d.getHours() * 60 + d.getMinutes() + 1) / 5) * 5;
-    return STOPS.map(function (s, i) { var t = (base + i * 4) % 1440; return [Math.floor(t / 60), t % 60]; });
+    return { key: base, list: STOPS.map(function (s, i) { var t = (base + i * 4) % 1440; return [Math.floor(t / 60), t % 60]; }) };
   }
   function hhmm(t) { return (t[0] < 10 ? '0' : '') + t[0] + ':' + (t[1] < 10 ? '0' : '') + t[1]; }
-  function renderClocks() {
+  var depKey = null;
+  function renderClocks(force) {
     var row = $('#clocks');
     if (!row) return;
     var dep = departures();
+    if (!force && dep.key === depKey) return;
+    depKey = dep.key;
     row.innerHTML = STOPS.map(function (s, i) {
-      return '<a class="uclock" href="#/' + s.id + '">' + clockSVG(dep[i][0], dep[i][1]) +
-        '<span class="hang"><b>' + esc(s.zh) + '</b><small>' + hhmm(dep[i]) + ' 發車</small></span></a>';
+      return '<a class="uclock" href="#/' + s.id + '"><span class="plate"><b>' + esc(s.zh) + '</b></span>' + clockSVG(dep.list[i][0], dep.list[i][1]) +
+        '<span class="tag">' + hhmm(dep.list[i]) + ' 發車</span></a>';
     }).join('');
   }
 
+  // ------------------------------------------------------------------ facade drawings
+  function ap(r, a) { return (100 + Math.cos(a) * r).toFixed(2) + ' ' + (100 - Math.sin(a) * r).toFixed(2); }
+  var ARCH = (function () {
+    var s = '<svg class="arch-svg" viewBox="0 0 200 100" preserveAspectRatio="none" aria-hidden="true">' +
+      '<path d="M14 100 A86 86 0 0 1 186 100 Z" fill="url(#fan)"/>' +
+      '<path d="M44 74 L76 28 L84 31 L52 79 Z M62 86 L98 25 L103 27 L68 89 Z" fill="#fff" opacity=".05"/>' +
+      '<g class="bars">', a, i;
+    for (a = 15; a < 180; a += 15) s += '<line x1="100" y1="100" x2="' + (100 + 86 * Math.cos(a * Math.PI / 180)).toFixed(2) + '" y2="' + (100 - 86 * Math.sin(a * Math.PI / 180)).toFixed(2) + '"/>';
+    [31, 59].forEach(function (r) { s += '<path d="M' + (100 - r) + ' 100 A' + r + ' ' + r + ' 0 0 1 ' + (100 + r) + ' 100"/>'; });
+    s += '</g><path d="M14 100 A86 86 0 0 1 186 100" class="recess"/>';
+    var n = 19, cols = ['#EFDCB2', '#9C4834', '#F2E0B8', '#94432F'];
+    for (i = 0; i < n; i++) {
+      var a0 = Math.PI - i * Math.PI / n, a1 = Math.PI - (i + 1) * Math.PI / n, key = i === 9, ri = key ? 78 : 86;
+      s += '<path d="M' + ap(100, a0) + ' A100 100 0 0 1 ' + ap(100, a1) + ' L' + ap(ri, a1) + ' A' + ri + ' ' + ri + ' 0 0 0 ' + ap(ri, a0) + ' Z" fill="' +
+        (key ? '#F7E8C6' : cols[i % 4]) + '" class="vs' + (key ? ' key' : '') + '"/>';
+    }
+    return s + '<path d="M1.2 100 A98.8 98.8 0 0 1 198.8 100" class="lip"/></svg>';
+  })();
+  var DOME = (function () {
+    var s = '<svg class="dome" viewBox="0 0 240 150" aria-hidden="true">' +
+      '<line x1="120" y1="3" x2="120" y2="30" stroke="#4E3A22" stroke-width="1.6"/><circle cx="120" cy="4" r="2.6" fill="url(#cap)"/>' +
+      '<path d="M107 46 C107 31 133 31 133 46 Z" fill="url(#verdigris)"/><path d="M107 46 C107 31 133 31 133 46 Z" fill="url(#domeShine)"/>' +
+      '<rect x="109" y="46" width="22" height="16" fill="#E9CB8A"/><rect x="112.5" y="49" width="4.4" height="10" rx="2.2" fill="#24362F"/><rect x="123.1" y="49" width="4.4" height="10" rx="2.2" fill="#24362F"/>' +
+      '<rect x="106" y="61" width="28" height="3.4" fill="#F4E4BE"/>' +
+      '<path d="M57 130 C57 86 88 64 120 62 C152 64 183 86 183 130 Z" fill="url(#verdigris)"/>' +
+      '<path d="M57 130 C57 86 88 64 120 62 C152 64 183 86 183 130 Z" fill="#fff" filter="url(#patina)" opacity=".42"/>' +
+      '<g class="ribs">';
+    for (var k = -3; k <= 3; k++) {
+      var bx = 120 + k * 17.5;
+      s += '<path d="M' + bx.toFixed(1) + ' 130 Q' + (120 + k * 15.5).toFixed(1) + ' 76 ' + (120 + k * 2.6).toFixed(1) + ' 63"/>';
+    }
+    s += '</g><path d="M57 130 C57 86 88 64 120 62 C152 64 183 86 183 130 Z" fill="url(#domeShine)"/>' +
+      '<rect x="44" y="128" width="152" height="5" fill="#F4E4BE"/><rect x="44" y="133" width="152" height="1.4" fill="#5A3F22" opacity=".45"/>' +
+      '<rect x="48" y="134" width="144" height="16" fill="url(#sandPat)"/><rect x="48" y="134" width="144" height="16" fill="#8A5A22" opacity=".12"/>';
+    [66, 93, 120, 147, 174].forEach(function (x) { s += '<ellipse cx="' + x + '" cy="142" rx="4.6" ry="5.4" fill="#23352E" stroke="#F4E4BE" stroke-width="1.2"/>'; });
+    return s + '</svg>';
+  })();
+
+  // ------------------------------------------------------------------ home
+  function nowHM() { var d = new Date(); return (d.getHours() < 10 ? '0' : '') + d.getHours() + (d.getMinutes() < 10 ? '0' : '') + d.getMinutes(); }
+  function boardClockHTML() {
+    var hm = nowHM();
+    return '<span class="flaps time" id="boardClock"><span class="sr">' + hm.slice(0, 2) + ':' + hm.slice(2) + '</span><span class="fcs" aria-hidden="true">' +
+      cellHTML(hm[0]) + cellHTML(hm[1]) + '<i class="colon"></i>' + cellHTML(hm[2]) + cellHTML(hm[3]) + '</span></span>';
+  }
   function renderHome() {
     leaveFeed();
     current = 'home';
     document.title = 'Platform 13｜菜單 Menu';
-    var h = '<section class="facade"><div class="arch"><h1>Platform <span class="roundel">13</span></h1>' +
-      '<p class="lede"><span>全店蔬食。</span><span>喝杯咖啡，</span><span>吃點東西，</span><span>不要急，</span><span>活著很好。</span></p></div>' +
-      '<div class="under"><div class="under-head"><h2>在時鐘下見</h2><p>Meet me under the clocks</p></div>' +
-      '<div class="clocks" id="clocks"></div></div></section>';
-    h += '<section class="board" aria-labelledby="boardTitle"><div class="board-top"><h2 id="boardTitle">發車看板<small>Departures</small></h2>' +
-      '<div class="clock"><span id="clock">--:--</span><small>現在時刻</small></div></div>' +
+    depKey = null;
+    var h = '<section class="facade"><div class="dome-wrap">' + DOME + '</div><div class="arch">' +
+      '<div class="arch-head">' + ARCH + '<div class="tower" id="tower">' + towerSVG() + '</div></div>' +
+      '<div class="arch-body"><div class="cornice" aria-hidden="true"></div>' +
+      '<div class="plaque"><h1><span class="gilt">Platform</span> <span class="roundel">13</span></h1></div>' +
+      '<p class="lede"><span>全店蔬食。</span><span>喝杯咖啡，</span><span>吃點東西，</span><span>不要急，</span><span>活著很好。</span></p>' +
+      '<div class="plinth" aria-hidden="true"></div></div></div>' +
+      '<div class="under"><div class="under-head"><h2 class="gilt">在時鐘下見</h2><p class="gilt">Meet me under the clocks</p></div>' +
+      '<div class="clocks"><div class="track" id="clocks"></div></div></div></section>';
+    h += '<section class="board" aria-labelledby="boardTitle"><i class="rail rt"></i><i class="rail rb"></i><i class="rail rl"></i><i class="rail rr"></i>' +
+      '<i class="screw s1"></i><i class="screw s2"></i><i class="screw s3"></i><i class="screw s4"></i><div class="board-in">' +
+      '<div class="board-top"><h2 id="boardTitle"><span class="gilt">發車看板</span><small class="gilt">Departures</small></h2>' +
+      '<div class="now">' + boardClockHTML() + '<small>現在時刻</small></div></div>' +
       '<div class="cols" aria-hidden="true"><span>車次</span><span>開往</span><span>起價</span><span>品項</span></div><ol class="brows">' +
       STOPS.map(function (s) {
         var m = minPrice(s);
@@ -123,47 +252,40 @@
           '<span class="dest"><b>' + esc(s.zh) + '</b><small>' + esc(s.en) + '</small></span>' +
           (s.isCats ? flaps('喵', 'price') : flaps(String(m), 'price')) +
           '<span class="cnt">' + (s.isCats ? s.list.length + ' 隻' : s.items.length + ' 道') + '</span></a></li>';
-      }).join('') + '</ol></section>';
+      }).join('') + '</ol></div></section>';
     h += '<section class="picks"><div class="sec-head"><h2>今日推薦</h2><p>每天換一組</p></div><div class="pick-row">' +
-      todaysPicks(6).map(function (x) {
+      todaysPicks(6).map(function (x, i) {
         var im = x.it.imgs[0];
-        return '<a class="pick" href="#/' + x.cat.id + '/' + x.it.id + '"><span class="pick-ph"><img src="' + src(im.src, true) + '" alt="" loading="lazy" decoding="async"></span>' +
+        return '<a class="pick" href="#/' + x.cat.id + '/' + x.it.id + '" style="--tilt:' + (i % 2 ? 1.6 : -1.8) + 'deg;--tape:' + (i % 3 - 1) * 4 + 'deg"><span class="pick-ph"><img src="' + src(im.src, true) + '" alt="" loading="lazy" decoding="async"></span>' +
           '<span class="pick-info"><small>' + esc(x.cat.zh) + '</small><b>' + esc(x.it.zh) + '</b><span class="pp">' + pricesHTML(x.it.price) + '</span></span></a>';
       }).join('') + '</div></section>';
     h += '<section class="duty"><div class="sec-head"><h2>本日站務員</h2><a href="#/cats">去看牠們</a></div><div class="duty-row">' +
       D.cats.list.map(function (c) {
-        return '<a class="duty-cat" href="#/cats/' + c.id + '" style="--collar:' + c.color + '"><img src="' + src(c.img, true) + '" alt="店貓' + esc(c.name) + '" loading="lazy"><b>' + esc(c.name) + '</b><small>' + esc(c.collar) + '</small></a>';
+        return '<a class="duty-cat" href="#/cats/' + c.id + '" style="--collar:' + c.color + '"><span class="duty-ph"><img src="' + src(c.img, true) + '" alt="店貓' + esc(c.name) + '" loading="lazy"></span><b class="nameplate">' + esc(c.name) + '</b><small>' + esc(c.collar) + '</small></a>';
       }).join('') + '</div></section>';
-    h += '<details class="rules ticket"><summary><span class="t-no">No. 13</span>乘車須知<span class="t-sub">內用規則 ' + D.shop.rules.length + ' 條</span></summary><ol>' +
+    h += '<details class="rules ticket"><summary><span class="t-no">No. 0013</span><span class="t-title">乘車須知<span class="t-sub">內用規則 ' + D.shop.rules.length + ' 條</span></span><i class="t-hole" aria-hidden="true"></i>' +
+      '<svg class="stamp" viewBox="0 0 100 100" aria-hidden="true"><defs><path id="stampArc" d="M50 50 m-35 0 a35 35 0 1 1 70 0 a35 35 0 1 1 -70 0"/></defs>' +
+      '<g filter="url(#distress)"><circle cx="50" cy="50" r="45" fill="none" stroke-width="3"/><circle cx="50" cy="50" r="27" fill="none" stroke-width="1.4"/>' +
+      '<text class="arc"><textPath href="#stampArc" startOffset="0">PLATFORM 13 · 喝杯咖啡 · 不要急 ·</textPath></text>' +
+      '<text class="mid" x="50" y="58" text-anchor="middle">13</text></g></svg></summary><ol>' +
       D.shop.rules.map(function (r) { return '<li>' + esc(r) + '</li>'; }).join('') + '</ol></details>';
     view.innerHTML = h;
     window.scrollTo(0, 0);
-    tick();
-    renderClocks();
+    renderClocks(true);
     if (!flapped && !reduce) runFlaps();
     flapped = true;
   }
-
-  function runFlaps() {
-    var DIG = '0123456789', CJK = '喵咪貓茶餅';
-    Array.prototype.forEach.call(document.querySelectorAll('.brow'), function (row, r) {
-      Array.prototype.forEach.call(row.querySelectorAll('.fc'), function (cell, c) {
-        var final = cell.textContent, set = /\d/.test(final) ? DIG : CJK, n = 0, stop = 8 + r * 2 + c * 2;
-        cell.classList.add('spin');
-        var t = setInterval(function () {
-          if (++n >= stop) { cell.textContent = final; cell.classList.remove('spin'); clearInterval(t); return; }
-          cell.textContent = set[Math.floor(Math.random() * set.length)];
-        }, 55);
-      });
-    });
-  }
   function tick() {
-    var el = $('#clock');
-    if (!el) return;
-    var d = new Date();
-    el.textContent = (d.getHours() < 10 ? '0' : '') + d.getHours() + ':' + (d.getMinutes() < 10 ? '0' : '') + d.getMinutes();
+    var box = $('#boardClock');
+    if (box) {
+      var hm = nowHM(), cells = box.querySelectorAll('.fc');
+      for (var i = 0; i < 4; i++) flipTo(cells[i], hm[i]);
+      box.querySelector('.sr').textContent = hm.slice(0, 2) + ':' + hm.slice(2);
+    }
+    updateTower();
+    renderClocks(false);
   }
-  setInterval(function () { tick(); renderClocks(); }, 15000);
+  setInterval(tick, 10000);
 
   // ------------------------------------------------------------------ feed (a category)
   function slideHTML(it, i, total, cat) {
