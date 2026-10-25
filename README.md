@@ -24,7 +24,14 @@ python3 tools/add_photo.py 你的照片.jpg latte
 
 中文字型是霞鶩文楷 TC（SIL Open Font License），只保留網站用到的字，所以檔案很小。新增品項如果有新的字，執行一次 `tools/build_fonts.py`（說明在檔案開頭）；沒執行的話，新字會用系統字型顯示，不影響使用。
 
+## 版本
+
+- 正式版（首頁）：時鐘下，以 Flinders Street Station 為靈感
+- `/v1/`：第一版；`/a/` 花磚、`/b/` 夜車：設計樣板
+- 舊的 `/c/` 網址會自動轉到首頁
+
 ## 其他
 
 - `tools/illustrations/`：缺照片品項的插畫產生程式
+- `tools/textures.py`：砂岩、木紋、舊漆、紙張貼圖
 - 價格以現場為準

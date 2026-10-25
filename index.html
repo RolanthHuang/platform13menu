@@ -4,35 +4,80 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Platform 13｜菜單 Menu</title>
-<meta name="description" content="Platform 13 全蔬食咖啡店的線上菜單：輕蔬食、主食、脆餅、鬆餅、點心、咖啡、茶飲與氣泡飲，附照片與價格，還有三隻店貓。">
-<meta name="theme-color" content="#2b4a8a">
-<meta property="og:title" content="Platform 13｜菜單 Menu">
-<meta property="og:description" content="全店蔬食。喝杯咖啡，吃點東西，不要急，活著很好。">
-<meta property="og:image" content="assets/img/photos/strawberry-waffle.webp">
+<meta name="description" content="Platform 13 全蔬食咖啡店的線上菜單。">
+<meta name="theme-color" content="#1E3A2F">
 <link rel="icon" href="assets/img/icon.svg" type="image/svg+xml">
-<link rel="preload" href="assets/fonts/wenkai-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/caslon-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/wenkai-700.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+<svg class="defs" width="0" height="0" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="brassA" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FCEBB0"/><stop offset=".32" stop-color="#DDB45A"/><stop offset=".6" stop-color="#9C6F27"/><stop offset="1" stop-color="#5E3C12"/>
+    </linearGradient>
+    <linearGradient id="brassB" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#5E3C12"/><stop offset=".42" stop-color="#A77B30"/><stop offset=".78" stop-color="#E6C26C"/><stop offset="1" stop-color="#FAE6A6"/>
+    </linearGradient>
+    <linearGradient id="brassFlat" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F3D88E"/><stop offset=".5" stop-color="#C9973D"/><stop offset="1" stop-color="#8A6020"/>
+    </linearGradient>
+    <radialGradient id="dial" cx=".42" cy=".38" r=".72">
+      <stop offset="0" stop-color="#FFFCF2"/><stop offset=".55" stop-color="#F8EED7"/><stop offset=".86" stop-color="#ECDDBB"/><stop offset="1" stop-color="#D8C399"/>
+    </radialGradient>
+    <radialGradient id="glass" cx=".3" cy=".24" r=".9">
+      <stop offset="0" stop-color="#fff" stop-opacity=".42"/><stop offset=".32" stop-color="#fff" stop-opacity=".09"/><stop offset=".68" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#2A1A08" stop-opacity=".22"/>
+    </radialGradient>
+    <linearGradient id="blued" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#121B33"/><stop offset=".5" stop-color="#34507F"/><stop offset="1" stop-color="#121B33"/>
+    </linearGradient>
+    <radialGradient id="cap" cx=".35" cy=".3" r=".8">
+      <stop offset="0" stop-color="#FFF3C2"/><stop offset=".5" stop-color="#C99A3F"/><stop offset="1" stop-color="#5E3C12"/>
+    </radialGradient>
+    <linearGradient id="verdigris" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#A9D8C5"/><stop offset=".3" stop-color="#78B09A"/><stop offset=".68" stop-color="#437D6B"/><stop offset="1" stop-color="#2A5649"/>
+    </linearGradient>
+    <radialGradient id="domeShine" cx=".3" cy=".25" r=".6">
+      <stop offset="0" stop-color="#fff" stop-opacity=".45"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="fan" cx=".5" cy="1" r="1">
+      <stop offset="0" stop-color="#FFD98A"/><stop offset=".22" stop-color="#E2A653"/><stop offset=".48" stop-color="#7A5A35"/><stop offset=".78" stop-color="#2E3B32"/><stop offset="1" stop-color="#1C2C26"/>
+    </radialGradient>
+    <pattern id="sandPat" patternUnits="userSpaceOnUse" width="80" height="60">
+      <image href="assets/img/tex/sandstone.webp" width="80" height="60" preserveAspectRatio="none"/>
+    </pattern>
+    <filter id="handShadow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="1.15"/></filter>
+    <filter id="patina" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency=".09 .045" numOctaves="3" seed="4" result="n"/>
+      <feColorMatrix in="n" type="matrix" values="0 0 0 0 .52  0 0 0 0 .78  0 0 0 0 .66  0 0 0 2.4 -1.3" result="lite"/>
+      <feTurbulence type="fractalNoise" baseFrequency=".05 .2" numOctaves="2" seed="11" result="n2"/>
+      <feColorMatrix in="n2" type="matrix" values="0 0 0 0 .14  0 0 0 0 .30  0 0 0 0 .25  0 0 0 2.4 -1.25" result="dark"/>
+      <feMerge result="spots"><feMergeNode in="dark"/><feMergeNode in="lite"/></feMerge>
+      <feComposite in="spots" in2="SourceGraphic" operator="in"/>
+    </filter>
+    <filter id="distress" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" seed="7" result="n"/>
+      <feColorMatrix in="n" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -2.6 1.75" result="m"/>
+      <feComposite in="SourceGraphic" in2="m" operator="in"/>
+    </filter>
+  </defs>
+</svg>
 <a class="skip" href="#view">跳到菜單內容</a>
+<div class="ambient" id="ambient" aria-hidden="true"></div>
 
-<header class="topbar" id="topbar">
-  <a class="wordmark" href="#/" aria-label="回到總覽">
-    <span class="wordmark-badge" aria-hidden="true">13</span>
-    <span class="wordmark-text"><b>Platform 13</b><small>全店蔬食・菜單</small></span>
-  </a>
+<header class="top" id="top">
+  <a class="logo" href="#/" aria-label="回到首頁"><span class="gilt">Platform</span><b>13</b></a>
   <button class="icon-btn" id="openSearch" type="button" aria-label="搜尋餐點或飲品">
     <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>
   </button>
 </header>
 
-<nav class="stops" id="stops" aria-label="菜單分類" hidden></nav>
-
 <main id="view" tabindex="-1"></main>
 
-<footer class="site-foot">
+<footer class="foot" id="foot">
   <p class="foot-quote" id="footQuote"></p>
-  <p class="foot-note">價格以現場為準。標示「插畫示意」的圖為插畫，實際餐點以現場為準；標示「照片準備中」的品項，照片會陸續補上。</p>
+  <p class="foot-note">價格以現場為準。標示「插畫示意」的是插畫，不是實拍；沒有照片的品項會陸續補上。</p>
 </footer>
 
 <div class="sheet-wrap" id="sheetWrap" hidden>
