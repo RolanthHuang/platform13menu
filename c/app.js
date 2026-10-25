@@ -124,7 +124,6 @@
           (s.isCats ? flaps('喵', 'price') : flaps(String(m), 'price')) +
           '<span class="cnt">' + (s.isCats ? s.list.length + ' 隻' : s.items.length + ' 道') + '</span></a></li>';
       }).join('') + '</ol></section>';
-    h += '<section class="story"><p class="story-k">店名的由來</p><p>店主以前每天經過墨爾本的 Flinders Street Station 搭車，店名 Platform 13 就取自那座車站的 13 號月台。</p></section>';
     h += '<section class="picks"><div class="sec-head"><h2>今日推薦</h2><p>每天換一組</p></div><div class="pick-row">' +
       todaysPicks(6).map(function (x) {
         var im = x.it.imgs[0];
