@@ -17,7 +17,8 @@ from fontTools.merge import Merger
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, 'assets', 'fonts')
-SOURCES = ['index.html', 'assets/js/app.js', 'assets/js/menu-data.js']
+SOURCES = ['index.html', 'assets/js/app.js', 'assets/js/menu-data.js',
+           'a/index.html', 'a/app.js', 'b/index.html', 'b/app.js']
 
 
 def site_text():
