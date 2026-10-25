@@ -72,7 +72,7 @@
 
   // ------------------------------------------------------------------ split-flap cells
   function cellHTML(ch) {
-    return '<span class="fc" data-ch="' + esc(ch) + '"><span class="h t"><span>' + esc(ch) + '</span></span><span class="h b"><span>' + esc(ch) + '</span></span></span>';
+    return '<span class="fc' + (/[^\x00-\x7f]/.test(ch) ? ' wide' : '') + '" data-ch="' + esc(ch) + '"><span class="h t"><span>' + esc(ch) + '</span></span><span class="h b"><span>' + esc(ch) + '</span></span></span>';
   }
   function flaps(text, cls, id) {
     return '<span class="flaps ' + (cls || '') + '"' + (id ? ' id="' + id + '"' : '') + '><span class="sr">' + esc(text) + '</span><span class="fcs" aria-hidden="true">' +

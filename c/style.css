@@ -215,6 +215,8 @@ a { color: inherit; }
 .fc .fb { z-index: 2; transform-origin: 50% 0; transform: rotateX(90deg); animation: fold-b 72ms 72ms ease-out forwards; }
 @keyframes fold-t { to { transform: rotateX(-90deg); filter: brightness(.55); } }
 @keyframes fold-b { from { transform: rotateX(90deg); filter: brightness(1.5); } to { transform: rotateX(0); filter: brightness(1); } }
+.fc.wide { width: 34px; }
+.fc.wide .h > span { font-size: 21px; padding-top: 0; }
 .time .fc { width: 23px; height: 37px; }
 .time .fc .h > span { font-size: 29px; color: var(--gilt); }
 .colon { display: block; width: 7px; height: 20px; background: radial-gradient(circle at 50% 25%, var(--gilt) 2px, transparent 2.5px), radial-gradient(circle at 50% 75%, var(--gilt) 2px, transparent 2.5px); }
@@ -470,6 +472,8 @@ a { color: inherit; }
   .dest small { font-size: 14px; }
   .fc { width: 27px; height: 41px; }
   .fc .h > span { font-size: 33px; }
+  .fc.wide { width: 42px; }
+  .fc.wide .h > span { font-size: 27px; }
   .ambient { display: block; }
   .feed-wrap { left: 50%; right: auto; width: 480px; transform: translateX(-50%); box-shadow: 0 0 0 6px var(--wood), 0 0 80px rgba(0,0,0,.6); background: transparent; }
   .feed-wrap.enter { animation-name: fade-in; }
