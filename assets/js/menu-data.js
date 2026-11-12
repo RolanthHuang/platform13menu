@@ -47,7 +47,7 @@ window.P13 = {
           imgs: [{ src: 'photos/garden-salad', kind: 'photo', cap: '照片是拼盤附的田園沙拉，單點份量以現場為準' }] },
         { id: 'caesar', zh: '凱撒沙拉', en: 'Caesar Salad', price: 180, imgs: [] },
         { id: 'caesar-patty', zh: '嫩排凱撒沙拉', en: 'Caesar Salad with Fried Veggie Patty', price: 250,
-          imgs: [{ src: 'photos/caesar-patty', kind: 'photo' }] }
+          imgs: [{ src: 'photos/caesar-patty-2', kind: 'photo' }, { src: 'photos/caesar-patty', kind: 'photo' }] }
       ],
       addons: {
         zh: '拼盤加點', en: 'Something on the side',
@@ -216,7 +216,7 @@ window.P13 = {
       cover: 'photos/blue-sparkling-2',
       items: [
         { id: 'llb', zh: '檸檬萊姆彼得斯', en: 'Lemon Lime Bitters', price: 130, tags: ['decaf'],
-          imgs: [{ src: 'illust/lemon-lime-bitters', kind: 'illust' }] },
+          imgs: [{ src: 'photos/llb', kind: 'photo' }] },
         { id: 'raspberry', zh: '覆盆子檸檬氣泡飲', en: 'Raspberry Sparkling', price: 130, tags: ['decaf'],
           imgs: [{ src: 'photos/raspberry-sparkling', kind: 'photo' }] },
         { id: 'peach', zh: '蜜桃檸檬氣泡飲', en: 'Peach Sparkling', price: 130, tags: ['decaf'],
