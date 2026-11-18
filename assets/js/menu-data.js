@@ -84,14 +84,14 @@ window.P13 = {
     {
       id: 'tortilla', zh: '脆餅', en: 'Tortilla',
       note: '搭配單點飲品，飲品享 8 折', noteEn: '20% off drinks ordered with it',
-      cover: 'photos/apple-tortilla',
+      cover: 'photos/apple-tortilla-3',
       items: [
         { id: 'margherita', zh: '瑪格麗特', en: 'Margherita', price: 199,
           imgs: [{ src: 'photos/margherita', kind: 'photo' }] },
         { id: 'truffle', zh: '松露野菇', en: 'Fungi with White Truffle Oil', price: 199,
           imgs: [{ src: 'photos/truffle', kind: 'photo' }] },
         { id: 'apple', zh: '蘋果鹹焦糖', en: 'Salted Caramel Apple Cinnamon', price: 199,
-          imgs: [{ src: 'photos/apple-tortilla', kind: 'photo' }, { src: 'photos/apple-tortilla-2', kind: 'photo' }] }
+          imgs: [{ src: 'photos/apple-tortilla-3', kind: 'photo' }, { src: 'photos/apple-tortilla', kind: 'photo' }, { src: 'photos/apple-tortilla-2', kind: 'photo' }] }
       ]
     },
 
@@ -129,7 +129,8 @@ window.P13 = {
         { id: 'croissant', zh: '香烤可頌', en: 'Croissant', price: 69, imgs: [] },
         { id: 'croissant-fruit', zh: '鮮奶油水果可頌', en: 'Croissant with Seasonal Fruits', price: 99,
           imgs: [{ src: 'photos/croissant-fruit', kind: 'photo', cap: '水果依季節更換' }] },
-        { id: 'croissant-tomato', zh: '蕃茄起司可頌', en: 'Croissant with Tomato and Cheese', price: 99, imgs: [] },
+        { id: 'croissant-tomato', zh: '蕃茄起司可頌', en: 'Croissant with Tomato and Cheese', price: 99,
+          imgs: [{ src: 'photos/croissant-tomato', kind: 'photo' }] },
         { id: 'soup', zh: '今日湯', en: 'Soup of the Day', price: 80,
           imgs: [{ src: 'photos/soup', kind: 'photo', cap: '每日口味不同' }] },
         { id: 'chips', zh: '黃金薯條', en: 'Chips', price: 100, imgs: [{ src: 'photos/chips', kind: 'photo' }] },
